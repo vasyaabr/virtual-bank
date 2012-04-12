@@ -8,6 +8,8 @@
       %th Account
       %th Sum
       %th Credit
+      %th E-mail
+      %th Active
       %th More info
   %tbody
     - @accounts.each do |acc|
@@ -16,6 +18,8 @@
         %td= acc.account
         %td= acc.sum
         %td= acc.credit
+        %td= acc.mail
+        %td= acc.active
         %td= link_to "More about #{acc.name}", account_path(acc)
 
 = link_to 'Add new account', new_account_path
