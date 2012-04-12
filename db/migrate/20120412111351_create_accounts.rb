@@ -11,6 +11,9 @@ class CreateAccounts < ActiveRecord::Migration
       t.integer :credit
       t.string :mail
       t.integer :active
+      # Add fields that let Rails automatically keep track
+      # of when movies are added or modified:
+      t.timestamps
     end
     MORE_ACCOUNTS.each do |acc|
       Account.create!(acc)

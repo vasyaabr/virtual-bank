@@ -1,0 +1,19 @@
+-# edit.html.haml using partial
+
+%h1 Edit Existing Transaction
+
+= form_tag transaction_path(@transaction), :method => :put do
+
+  = label :transaction, :from, 'From'
+  = text_field :transaction, 'from'
+
+  = label :transaction, :to, 'To'
+  = text_field :transaction, 'to'
+
+  = label :transaction, :change_date, 'Change date'
+  = date_select :transaction, :change_date
+
+  = label :transaction, :sum, 'Sum'
+  = number_field :transaction, :sum
+
+  = submit_tag 'Update Transaction Info'

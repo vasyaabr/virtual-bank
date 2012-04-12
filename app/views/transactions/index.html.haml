@@ -1,0 +1,23 @@
+-#  This file is app/views/transactions/index.html.haml
+%h1 All Transactions
+
+%table#transactions
+  %thead
+    %tr
+      %th From
+      %th To
+      %th Change Date
+      %th Sum
+      %th Edit
+      %th Delete
+  %tbody
+    - @transactions.each do |transaction|
+      %tr
+        %td= transaction.from 
+        %td= transaction.to
+        %td= transaction.change_date
+        %td= transaction.sum
+        %td= link_to 'Edit', edit_transaction_path(transaction)
+        %td= button_to 'Delete', transaction_path(transaction), :method => :delete, :confirm => 'Are you sure?'
+
+= link_to 'Add new transaction', new_transaction_path
