@@ -1,0 +1,20 @@
+%h1 Create New Account
+
+= form_tag accounts_path do
+
+  = label :account, :name, 'Name'
+  = text_field :account, 'name'
+
+  = label :account, :account, 'Account'
+  = text_field :account, 'account'
+
+  = label :account, :pass, 'Password'
+  = text_field :account, 'pass'
+
+  = label :account, :sum, 'Sum'
+  = number_field :account, :sum
+
+  = label :account, :credit, 'Credit'
+  = number_field :account, :credit
+
+  = submit_tag 'Save Changes'

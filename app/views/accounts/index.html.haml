@@ -1,0 +1,21 @@
+-#  This file is app/views/accounts/index.html.haml
+%h1 All Accounts
+
+%table#accounts
+  %thead
+    %tr
+      %th Name
+      %th Account
+      %th Sum
+      %th Credit
+      %th More info
+  %tbody
+    - @accounts.each do |acc|
+      %tr
+        %td= acc.name 
+        %td= acc.account
+        %td= acc.sum
+        %td= acc.credit
+        %td= link_to "More about #{acc.name}", account_path(acc)
+
+= link_to 'Add new account', new_account_path

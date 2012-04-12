@@ -1,0 +1,22 @@
+-# edit.html.haml using partial
+
+%h1 Edit Existing Account
+
+= form_tag account_path(@account), :method => :put do
+
+  = label :account, :name, 'Name'
+  = text_field :account, 'name'
+
+  = label :account, :account, 'Account'
+  = text_field :account, 'account'
+
+  = label :account, :pass, 'Password'
+  = text_field :account, 'pass'
+
+  = label :account, :sum, 'Sum'
+  = number_field :account, 'sum'
+
+  = label :account, :credit, 'Credit'
+  = number_field :account, 'credit'
+
+  = submit_tag 'Update Movie Info'
