@@ -2,16 +2,16 @@
 
 = form_tag transactions_path do
 
-  = label :transaction, :from, 'From'
+  = label :transaction, :from, 'Счет отправителя'
   = text_field :transaction, 'from'
 
-  = label :transaction, :to, 'To'
+  = label :transaction, :pass, 'Пароль'
+  = password_field :transaction, 'pass'
+
+  = label :transaction, :to, 'Счет получателя'
   = text_field :transaction, 'to'
 
-  = label :transaction, :change_date, 'Change date'
-  = date_select :transaction, :change_date
-
-  = label :transaction, :sum, 'Sum'
+  = label :transaction, :sum, 'Сумма'
   = number_field :transaction, :sum
 
-  = submit_tag 'Save Changes'
+  = submit_tag 'Перечислить'

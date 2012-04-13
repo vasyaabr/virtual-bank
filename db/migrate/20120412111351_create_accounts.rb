@@ -1,6 +1,7 @@
 class CreateAccounts < ActiveRecord::Migration
   MORE_ACCOUNTS = [
-    {:name => 'Basil', :account => '9211147767', :pass => '1234', :sum => 500, :credit => 1, :mail => 'vasyaabr@gmail.com', :active => 1},
+    {:name => 'Basil_test', :account => '1234', :pass => '1234', :sum => 500, :credit => 1, :mail => 'vasyaabr@gmail.com', :active => 1},
+    {:name => 'Gil_test', :account => '5678', :pass => '1234', :sum => 1000, :credit => 1, :mail => 'vasyaabr@gmail.com', :active => 1},
   ]
   def up
     create_table :accounts do |t|
