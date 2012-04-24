@@ -7,7 +7,16 @@
     = csrf_meta_tags
 
   %body
-    %h1.title= link_to 'T-Pskov', root_url
+    %h1.title= link_to 'Т-Псков', root_url
+    - if session[:acc] 
+      #menu
+        %h2= link_to 'Оплата', root_url
+        %h2= link_to 'Транзакции', transactions_path
+        %h2= link_to 'Остаток на счете', account_path(session[:acc])
+        - if session[:admin]
+          %h2= link_to 'Все счета', accounts_path
+        %h2= link_to 'Выход', logout_url
+
     #main
       - if flash[:notice]
         #notice.message= flash[:notice]

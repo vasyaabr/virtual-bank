@@ -16,13 +16,19 @@
   = label :account, :sum, 'Sum'
   = number_field :account, 'sum'
 
-  = label :account, :credit, 'Credit'
-  = number_field :account, 'credit'
+  = label :account, :credit, 'Кредит разрешен'
+  = number_field :account, :credit
+
+  = label :account, :creditsum, 'Credit sum'
+  = number_field :account, :creditsum
 
   = label :account, :mail, 'E-mail'
   = text_field :account, 'mail'
 
   = label :account, :active, 'Account active'
   = number_field :account, :active
+
+  = label :account, :admin, 'Это администратор'
+  = number_field :account, :admin
 
   = submit_tag 'Update Account Info'

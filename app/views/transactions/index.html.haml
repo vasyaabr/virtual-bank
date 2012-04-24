@@ -1,15 +1,16 @@
 -#  This file is app/views/transactions/index.html.haml
-%h1 All Transactions
+%h1 Банк : Все транзакции
 
 %table#transactions
   %thead
     %tr
-      %th From
-      %th To
-      %th Change Date
-      %th Sum
-      %th Edit
-      %th Delete
+      %th Со счета
+      %th На счет
+      %th Дата транзакции
+      %th Сумма
+      - if session[:admin] 
+        %th Редактировать
+        %th Удалить
   %tbody
     - @transactions.each do |transaction|
       %tr
@@ -17,7 +18,9 @@
         %td= transaction.to
         %td= transaction.change_date
         %td= transaction.sum
-        %td= link_to 'Edit', edit_transaction_path(transaction)
-        %td= button_to 'Delete', transaction_path(transaction), :method => :delete, :confirm => 'Are you sure?'
+        - if session[:admin] 
+          %td= link_to 'Редактировать', edit_transaction_path(transaction)
+          %td= button_to 'Удалить', transaction_path(transaction), :method => :delete, :confirm => 'Вы уверены?'
 
-= link_to 'Add new transaction', new_transaction_path
+- if session[:admin] 
+  = link_to 'Добавить новую транзакцию', new_transaction_path

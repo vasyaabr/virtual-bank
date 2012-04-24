@@ -1,27 +1,39 @@
 -# in app/views/accounts/show.html.haml
 
-%h2 Details about #{@account.name}
+%h2 Банк : Информация по счету #{@account.account}
 
 %ul#details
   %li
-    Account:
+    Владелец счета:
+    = @account.name
+  %li
+    Номер счета:
     = @account.account
+  - if session[:admin] 
+    %li
+      Пароль:
+      = @account.pass
   %li
-    Password:
-    = @account.pass
-  %li
-    Sum:
+    Остаток средств:
     = @account.sum
   %li
-    Credit allowed:
+    Кредит разрешен (1-да, 0-нет):
     = @account.credit
   %li
-    E-mail:
+    Сумма кредита:
+    = @account.creditsum
+  %li
+    Электронная почта:
     = @account.mail
   %li
-    Active:
+    Счет активен (1-да, 0-нет):
     = @account.active
+  - if session[:admin] 
+    %li
+      Это администратор (1-да, 0-нет):
+      = @account.admin
 
-= link_to 'Edit', edit_account_path(@account)
-= button_to 'Delete', account_path(@account), :method => :delete, :confirm => 'Are you sure?'
-= link_to 'Back to account list', accounts_path
+- if session[:admin] 
+  = link_to 'Редактировать', edit_account_path(@account)
+  = button_to 'Удалить', account_path(@account), :method => :delete, :confirm => 'Вы уверены?'
+  = link_to 'Назад к списку счетов', accounts_path

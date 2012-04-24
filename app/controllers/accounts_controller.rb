@@ -1,4 +1,7 @@
+#encoding: utf-8
 class AccountsController < ApplicationController
+  before_filter :authenticate
+  before_filter :isadmin?, :except => :show
 
   def show
     id = params[:id] # retrieve movie ID from URI route
@@ -16,7 +19,7 @@ class AccountsController < ApplicationController
 
   def create
     @account = Account.create!(params[:account])
-    flash[:notice] = "#{@account.name} was successfully created."
+    flash[:notice] = "#{@account.account} успешно удален."
     redirect_to accounts_path
   end
 
@@ -27,14 +30,14 @@ class AccountsController < ApplicationController
   def update
     @account = Account.find params[:id]
     @account.update_attributes!(params[:account])
-    flash[:notice] = "#{@account.name} was successfully updated."
+    flash[:notice] = "#{@account.account} успешно обновлен."
     redirect_to account_path(@account)
   end
 
   def destroy
     @account = Account.find(params[:id])
     @account.destroy
-    flash[:notice] = "Account '#{@account.name}' deleted."
+    flash[:notice] = "Счет '#{@account.account}' удален."
     redirect_to accounts_path
   end
 

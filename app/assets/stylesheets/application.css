@@ -33,6 +33,15 @@ h1.title {
   font-size: 2em;
   font-style: normal;
 }
+div#menu {
+  color: maroon;
+  padding: 0 0 0 10px;
+  font-size: 80%;
+  font-style: normal;
+  display: block;
+  width: 100%;
+  border-bottom: 2px solid DarkSlateGrey;
+}
 table {
   margin: 10px;
   border-collapse: collapse;

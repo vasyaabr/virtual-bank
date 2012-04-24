@@ -1,16 +1,17 @@
 -#  This file is app/views/accounts/index.html.haml
-%h1 All Accounts
+%h1 Банк : Все счета
 
 %table#accounts
   %thead
     %tr
-      %th Name
-      %th Account
-      %th Sum
-      %th Credit
-      %th E-mail
-      %th Active
-      %th More info
+      %th Имя
+      %th Счет
+      %th Остаток
+      %th Кредит разрешен
+      %th Кредитный лимит
+      %th Электронная почта
+      %th Активен
+      %th Подробнее
   %tbody
     - @accounts.each do |acc|
       %tr
@@ -18,8 +19,9 @@
         %td= acc.account
         %td= acc.sum
         %td= acc.credit
+        %td= acc.creditsum
         %td= acc.mail
         %td= acc.active
-        %td= link_to "More about #{acc.name}", account_path(acc)
+        %td= link_to "Подробнее о  #{acc.account}", account_path(acc)
 
-= link_to 'Add new account', new_account_path
+= link_to 'Добавить новый счет', new_account_path

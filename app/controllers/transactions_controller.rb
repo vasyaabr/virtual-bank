@@ -1,7 +1,14 @@
+#encoding: utf-8
 class TransactionsController < ApplicationController
+  before_filter :authenticate
+  before_filter :isadmin?, :only => [:edit, :update, :destroy]
 
   def index
-    @transactions = Transaction.all
+    if session[:admin]
+      @transactions = Transaction.all
+    else
+      @transactions = Transaction.where(:from => session[:acc].account)
+    end
   end
 
   def new
@@ -9,54 +16,55 @@ class TransactionsController < ApplicationController
   end
 
   def create
-    if params[:transaction][:from] == params[:transaction][:to]
-      flash[:notice] = "Disallowed operation (you cannot made transaction to self)."
-      redirect_to params[:transaction][:pass] != nil ? root_url : new_transaction_path
-      return
-    end
-
-    @from = Account.find_by_account params[:transaction][:from]
-    if @from == nil
-      flash[:notice] = "Invalid from account."
-      redirect_to params[:transaction][:pass] != nil ? root_url : new_transaction_path
-      return
-    end
+    @from = Account.find_by_account session[:acc].account
     if @from.active != 1
-      flash[:notice] = "From account blocked."
-      redirect_to params[:transaction][:pass] != nil ? root_url : new_transaction_path
+      flash[:notice] = "Счет блокирован."
+      #audit_log.info 'Blocked: '+@from.account
+      redirect_to session[:admin] ? new_transaction_path : root_url
       return
-    end
-    if params[:transaction][:pass] != nil
-      if @from.pass != params[:transaction][:pass]
-        flash[:notice] = "Invalid password."
-        redirect_to root_url
-        return
-      end
     end
     if @from.credit != 1 && @from.sum < params[:transaction][:sum].to_i
-      flash[:notice] = "You haven't so much money and credit not allowed."
-      redirect_to params[:transaction][:pass] != nil ? root_url : new_transaction_path
+      flash[:notice] = "У вас недостаточно средств, а кредит запрещен."
+      #audit_log.info 'Lack of money: '+@from.account
+      redirect_to session[:admin] ? new_transaction_path : root_url
+      return
+    end
+    if @from.sum < params[:transaction][:sum].to_i || @from.credit == 1 && @from.sum+@from.creditsum < params[:transaction][:sum].to_i
+      flash[:notice] = "Кредитный лимит недостаточен."
+      #audit_log.info 'Lack of money+credit: '+@from.account
+      redirect_to session[:admin] ? new_transaction_path : root_url
       return
     end
 
     @to = Account.find_by_account params[:transaction][:to]
     if @to == nil
-      flash[:notice] = "Invalid to account."
-      redirect_to params[:transaction][:pass] != nil ? root_url : new_transaction_path
+      flash[:notice] = "Неверный счет получателя."
+      redirect_to session[:admin] ? new_transaction_path : root_url
       return
     end
 
-    @transaction = Transaction.new(:from => params[:transaction][:from], 
+    if session[:acc].account == params[:transaction][:to]
+      flash[:notice] = "Запрещенная операция (нельзя переводить самому себе)."
+      redirect_to session[:admin] ? new_transaction_path : root_url
+      return
+    end
+
+    @transaction = Transaction.new(:from => session[:acc].account, 
       :to => params[:transaction][:to],
       :change_date => params[:transaction][:change_date] == nil ? Time.now : params[:transaction][:change_date], 
       :sum => params[:transaction][:sum])
     @transaction.save
+    #audit_log.info 'Transaction added: '+params[]
+
     @from.sum -= params[:transaction][:sum].to_i
     @from.save
+    #audit_log.info 'Sum changed for '+@from.account+', amount: -'+params[:transaction][:sum]
+
     @to.sum += params[:transaction][:sum].to_i
     @to.save
+    #audit_log.info 'Sum changed for '+@to.account+', amount: +'+params[:transaction][:sum]
 
-    flash[:notice] = "Transaction was successfully created."
+    flash[:notice] = "Операция успешно проведена."
     redirect_to transactions_path
   end
 
@@ -67,14 +75,14 @@ class TransactionsController < ApplicationController
   def update
     @transaction = Transaction.find params[:id]
     @transaction.update_attributes!(params[:transaction])
-    flash[:notice] = "Transaction was successfully updated."
+    flash[:notice] = "Транзакция обновлена."
     redirect_to transactions_path
   end
 
   def destroy
     @transaction = Transaction.find(params[:id])
     @transaction.destroy
-    flash[:notice] = "Transaction deleted."
+    flash[:notice] = "Транзакция удалена."
     redirect_to transactions_path
   end
 

@@ -1,0 +1,13 @@
+-# auth.html.haml
+
+%h1 Банк : Вход в личный кабинет
+
+= form_tag setauth_url, :method => :put do
+
+  = label :auth, :account, 'Номер счета'
+  = text_field :auth, 'account'
+
+  = label :auth, :pass, 'Пин-код'
+  = text_field :auth, 'pass'
+
+  = submit_tag 'Войти'

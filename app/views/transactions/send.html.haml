@@ -1,12 +1,6 @@
-%h1 Перечислить деньги
+%h1 Банк : Перечислить деньги
 
 = form_tag transactions_path do
-
-  = label :transaction, :from, 'Счет отправителя'
-  = text_field :transaction, 'from'
-
-  = label :transaction, :pass, 'Пароль'
-  = password_field :transaction, 'pass'
 
   = label :transaction, :to, 'Счет получателя'
   = text_field :transaction, 'to'
