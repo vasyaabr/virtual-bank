@@ -68,8 +68,12 @@ class TransactionsController < ApplicationController
     @to.save
     #audit_log.info 'Sum changed for '+@to.account+', amount: +'+params[:transaction][:sum]
 
-    Notifier.transaction_from_notification(@from,@transaction).deliver
-    Notifier.transaction_to_notification(@to,@transaction).deliver
+    if @from.mail != '' and @from.mail != nil
+      Notifier.transaction_from_notification(@from,@transaction).deliver
+    end
+    if @to.mail != '' and @to.mail != nil
+      Notifier.transaction_to_notification(@to,@transaction).deliver
+    end
 
     flash[:notice] = "Операция успешно проведена."
     redirect_to transactions_path
