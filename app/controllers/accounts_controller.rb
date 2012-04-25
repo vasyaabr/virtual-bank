@@ -7,6 +7,8 @@ class AccountsController < ApplicationController
     id = params[:id] # retrieve movie ID from URI route
     @account = Account.find(id) # look up movie by unique ID
     # will render app/views/accounts/show.<extension> by default
+    @senttransactions = Transaction.where(:from => @account.account)
+    @recvtransactions = Transaction.where(:to => @account.account)
   end
 
   def index

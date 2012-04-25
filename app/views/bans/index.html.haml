@@ -1,0 +1,15 @@
+-#  This file is app/views/bans/index.html.haml
+%h1 Банк : Заблокированные IP
+
+%table#bans
+  %thead
+    %tr
+      %th IP
+      %th Попыток входа
+      %th Заблокирован до
+  %tbody
+    - @bans.each do |ban|
+      %tr
+        %td= ban.ip 
+        %td= ban.try
+        %td= ban.banned_till

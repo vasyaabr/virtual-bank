@@ -16,7 +16,11 @@ class TransactionsController < ApplicationController
   end
 
   def create
-    @from = Account.find_by_account session[:acc].account
+    if params[:transaction][:from]
+      @from = Account.find_by_account params[:transaction][:from]
+    else
+      @from = Account.find_by_account session[:acc].account
+    end
     if @from.active != 1
       flash[:notice] = "Счет блокирован."
       #audit_log.info 'Blocked: '+@from.account
@@ -43,13 +47,13 @@ class TransactionsController < ApplicationController
       return
     end
 
-    if session[:acc].account == params[:transaction][:to]
+    if @from.account == params[:transaction][:to]
       flash[:notice] = "Запрещенная операция (нельзя переводить самому себе)."
       redirect_to session[:admin] ? new_transaction_path : root_url
       return
     end
 
-    @transaction = Transaction.new(:from => session[:acc].account, 
+    @transaction = Transaction.new(:from => @from.account, 
       :to => params[:transaction][:to],
       :change_date => params[:transaction][:change_date] == nil ? Time.now : params[:transaction][:change_date], 
       :sum => params[:transaction][:sum])
@@ -63,6 +67,9 @@ class TransactionsController < ApplicationController
     @to.sum += params[:transaction][:sum].to_i
     @to.save
     #audit_log.info 'Sum changed for '+@to.account+', amount: +'+params[:transaction][:sum]
+
+    Notifier.transaction_from_notification(@from,@transaction).deliver
+    Notifier.transaction_to_notification(@to,@transaction).deliver
 
     flash[:notice] = "Операция успешно проведена."
     redirect_to transactions_path

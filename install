@@ -1,0 +1,1697 @@
+Script started on Wed 25 Apr 2012 05:42:17 AM UTC
+]0;ubuntu@ip-10-234-217-96: ~/hw2_rottenpotatoesubuntu@ip-10-234-217-96:~/hw2_rottenpotatoes$ ls
+[0m[01;34mapp[0m       config.ru  Gemfile       [01;34mlib[0m     Rakefile  [01;34mtmp[0m
+[01;34mautotest[0m  [01;34mdb[0m         Gemfile.lock  [01;34mlog[0m     README    [01;34mvendor[0m
+[01;34mconfig[0m    [01;34mdoc[0m        install       [01;34mpublic[0m  [01;34mscript[0m
+]0;ubuntu@ip-10-234-217-96: ~/hw2_rottenpotatoesubuntu@ip-10-234-217-96:~/hw2_rottenpotatoes$ cd script
+]0;ubuntu@ip-10-234-217-96: ~/hw2_rottenpotatoes/scriptubuntu@ip-10-234-217-96:~/hw2_rottenpotatoes/script$ ls
+[0m[01;32mcucumber[0m  [01;32mrails[0m
+]0;ubuntu@ip-10-234-217-96: ~/hw2_rottenpotatoes/scriptubuntu@ip-10-234-217-96:~/hw2_rottenpotatoes/script$ export GMAIL_SMTP_USER=vasy aabr@gmail.com
+]0;ubuntu@ip-10-234-217-96: ~/hw2_rottenpotatoes/scriptubuntu@ip-10-234-217-96:~/hw2_rottenpotatoes/script$ exo[Kport GMAIL_SMTP_PASSWORD= jxtympkjq,fpbkm
+]0;ubuntu@ip-10-234-217-96: ~/hw2_rottenpotatoes/scriptubuntu@ip-10-234-217-96:~/hw2_rottenpotatoes/script$ cd ..
+]0;ubuntu@ip-10-234-217-96: ~/hw2_rottenpotatoesubuntu@ip-10-234-217-96:~/hw2_rottenpotatoes$ rails generate mailer Notifier
+[1m[32m      create[0m  app/mailers/notifier.rb
+[1m[37m      invoke[0m  erb
+[1m[32m      create[0m    app/views/notifier
+]0;ubuntu@ip-10-234-217-96: ~/hw2_rottenpotatoesubuntu@ip-10-234-217-96:~/hw2_rottenpotatoes$ rails server
+=> Booting WEBrick
+=> Rails 3.1.0 application starting in development on http://0.0.0.0:3000
+=> Call with -d to detach
+=> Ctrl-C to shutdown server
+[2012-04-25 06:15:29] INFO  WEBrick 1.3.1
+[2012-04-25 06:15:29] INFO  ruby 1.9.2 (2011-07-09) [i686-linux]
+[2012-04-25 06:15:29] INFO  WEBrick::HTTPServer#start: pid=971 port=3000
+
+
+Started GET "/" for 84.204.51.226 at 2012-04-25 06:15:52 +0000
+  Processing by TransactionsController#send as HTML
+  [1m[36mBan Load (0.3ms)[0m  [1mSELECT "bans".* FROM "bans" WHERE "bans"."ip" = '84.204.51.226' LIMIT 1[0m
+Redirected to http://ec2-176-34-202-40.eu-west-1.compute.amazonaws.com:3000/auth
+Completed 302 Found in 72ms
+
+
+Started GET "/auth" for 84.204.51.226 at 2012-04-25 06:15:54 +0000
+  Processing by AuthController#auth as HTML
+Rendered auth/auth.html.haml within layouts/application (3.4ms)
+Completed 200 OK in 198ms (Views: 197.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 06:15:54 +0000
+Served asset /application.css - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 06:15:54 +0000
+Served asset /jquery.js - 200 OK (14ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 06:15:54 +0000
+Served asset /jquery_ujs.js - 200 OK (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 06:15:54 +0000
+Served asset /application.js - 200 OK (8ms)
+
+
+Started PUT "/setauth" for 84.204.51.226 at 2012-04-25 06:16:02 +0000
+  Processing by AuthController#setauth as HTML
+  Parameters: {"utf8"=>"вњ“", "authenticity_token"=>"locdDt0AAYV1QlbCiT92c1eEbuMm8GaWQHjVO58iJOw=", "auth"=>{"account"=>"111666", "pass"=>"3366"}, "commit"=>"Р’РѕР№С‚Рё"}
+  [1m[35mAccount Load (0.1ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."account" = '111666' AND "accounts"."pass" = '3366' LIMIT 1
+Redirected to http://ec2-176-34-202-40.eu-west-1.compute.amazonaws.com:3000/
+Completed 302 Found in 31ms
+
+
+Started GET "/" for 84.204.51.226 at 2012-04-25 06:16:03 +0000
+  Processing by TransactionsController#send as HTML
+Rendered transactions/send.html.haml within layouts/application (3.3ms)
+Completed 200 OK in 64ms (Views: 62.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 06:16:03 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 06:16:03 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 06:16:03 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 06:16:03 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/transactions" for 84.204.51.226 at 2012-04-25 06:16:06 +0000
+  Processing by TransactionsController#index as HTML
+  [1m[36mTransaction Load (0.1ms)[0m  [1mSELECT "transactions".* FROM "transactions" [0m
+Rendered transactions/index.html.haml within layouts/application (4.1ms)
+Completed 200 OK in 39ms (Views: 37.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 06:16:06 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 06:16:06 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 06:16:06 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 06:16:06 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/transactions" for 84.204.51.226 at 2012-04-25 06:16:13 +0000
+  Processing by TransactionsController#index as HTML
+  [1m[35mTransaction Load (0.1ms)[0m  SELECT "transactions".* FROM "transactions" 
+Rendered transactions/index.html.haml within layouts/application (0.5ms)
+Completed 200 OK in 20ms (Views: 19.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 06:16:13 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 06:16:13 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 06:16:13 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 06:16:13 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/transactions/new" for 84.204.51.226 at 2012-04-25 06:16:17 +0000
+  Processing by TransactionsController#new as HTML
+Rendered transactions/new.html.haml within layouts/application (282.7ms)
+Completed 200 OK in 514ms (Views: 512.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 06:16:17 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 06:16:17 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 06:16:17 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 06:16:18 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/accounts" for 84.204.51.226 at 2012-04-25 06:16:24 +0000
+  Processing by AccountsController#index as HTML
+  [1m[36mAccount Load (0.6ms)[0m  [1mSELECT "accounts".* FROM "accounts" [0m
+Rendered accounts/index.html.haml within layouts/application (78.7ms)
+Completed 200 OK in 105ms (Views: 102.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 06:16:24 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 06:16:24 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 06:16:24 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 06:16:24 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/transactions" for 84.204.51.226 at 2012-04-25 06:16:45 +0000
+  Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"вњ“", "authenticity_token"=>"locdDt0AAYV1QlbCiT92c1eEbuMm8GaWQHjVO58iJOw=", "transaction"=>{"from"=>"222444", "to"=>"111666", "change_date(1i)"=>"2012", "change_date(2i)"=>"4", "change_date(3i)"=>"25", "sum"=>"100"}, "commit"=>"Save Changes"}
+  [1m[35mAccount Load (0.1ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."account" = '111666' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."account" = '111666' LIMIT 1[0m
+Redirected to http://ec2-176-34-202-40.eu-west-1.compute.amazonaws.com:3000/transactions/new
+Completed 302 Found in 14ms
+
+
+Started GET "/transactions/new" for 84.204.51.226 at 2012-04-25 06:16:45 +0000
+  Processing by TransactionsController#new as HTML
+Rendered transactions/new.html.haml within layouts/application (4.4ms)
+Completed 200 OK in 65ms (Views: 64.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 06:16:45 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 06:16:45 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 06:16:45 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 06:16:45 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/transactions" for 84.204.51.226 at 2012-04-25 06:18:44 +0000
+  Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"вњ“", "authenticity_token"=>"locdDt0AAYV1QlbCiT92c1eEbuMm8GaWQHjVO58iJOw=", "transaction"=>{"from"=>"222444", "to"=>"111666", "change_date(1i)"=>"2012", "change_date(2i)"=>"4", "change_date(3i)"=>"25", "sum"=>"100"}, "commit"=>"Save Changes"}
+  [1m[35mAccount Load (0.1ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."account" = '222444' LIMIT 1
+  [1m[36mAccount Load (0.2ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."account" = '111666' LIMIT 1[0m
+Redirected to http://ec2-176-34-202-40.eu-west-1.compute.amazonaws.com:3000/transactions/new
+Completed 302 Found in 14ms
+
+
+Started GET "/transactions/new" for 84.204.51.226 at 2012-04-25 06:18:44 +0000
+  Processing by TransactionsController#new as HTML
+Rendered transactions/new.html.haml within layouts/application (4.0ms)
+Completed 200 OK in 24ms (Views: 23.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 06:18:44 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 06:18:44 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 06:18:44 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 06:18:44 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/transactions" for 84.204.51.226 at 2012-04-25 06:18:47 +0000
+  Processing by TransactionsController#index as HTML
+  [1m[35mTransaction Load (0.1ms)[0m  SELECT "transactions".* FROM "transactions" 
+Rendered transactions/index.html.haml within layouts/application (0.5ms)
+Completed 200 OK in 61ms (Views: 59.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 06:18:47 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 06:18:47 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 06:18:47 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 06:18:47 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/transactions/new" for 84.204.51.226 at 2012-04-25 06:19:46 +0000
+  Processing by TransactionsController#new as HTML
+Rendered transactions/new.html.haml within layouts/application (3.8ms)
+Completed 200 OK in 22ms (Views: 21.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 06:19:46 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 06:19:46 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 06:19:46 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 06:19:49 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started POST "/transactions" for 84.204.51.226 at 2012-04-25 06:19:59 +0000
+  Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"вњ“", "authenticity_token"=>"locdDt0AAYV1QlbCiT92c1eEbuMm8GaWQHjVO58iJOw=", "transaction"=>{"from"=>"222444", "to"=>"111666", "change_date(1i)"=>"2012", "change_date(2i)"=>"4", "change_date(3i)"=>"25", "sum"=>"100"}, "commit"=>"Save Changes"}
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."account" = '222444' LIMIT 1[0m
+  [1m[35mAccount Load (0.1ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."account" = '111666' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "transactions" ("change_date", "created_at", "from", "sum", "to", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["change_date", Wed, 25 Apr 2012 06:19:59 UTC +00:00], ["created_at", Wed, 25 Apr 2012 06:19:59 UTC +00:00], ["from", "222444"], ["sum", 100], ["to", "111666"], ["updated_at", Wed, 25 Apr 2012 06:19:59 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  UPDATE "accounts" SET "sum" = 7400, "updated_at" = '2012-04-25 06:19:59.453029' WHERE "accounts"."id" = 2
+  [1m[36m (0.1ms)[0m  [1mUPDATE "accounts" SET "sum" = 12100, "updated_at" = '2012-04-25 06:19:59.479508' WHERE "accounts"."id" = 1[0m
+Completed 500 Internal Server Error in 110ms
+
+SyntaxError (/home/ubuntu/hw2_rottenpotatoes/app/mailers/notifier.rb:8: syntax error, unexpected tASSOC, expecting '}'
+    body       { :transaction => transaction }
+                                ^):
+  app/controllers/transactions_controller.rb:71:in `create'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.8ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.4ms)
+Error during failsafe response: ActionView::Template::Error
+  /usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/core_ext/string/output_safety.rb:106:in `concat'
+  /usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/core_ext/string/output_safety.rb:106:in `concat'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/buffers.rb:11:in `<<'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb:17:in `__usr_local_lib_ruby_gems_______gems_actionpack_______lib_action_dispatch_middleware_templates_rescues_template_error_erb__554104910_104546690'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/template.rb:144:in `block in render'
+  /usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/notifications.rb:55:in `instrument'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/template.rb:142:in `render'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:40:in `block (2 levels) in render_template'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/abstract_renderer.rb:33:in `block in instrument'
+  /usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/notifications.rb:53:in `block in instrument'
+  /usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  /usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/notifications.rb:53:in `instrument'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/abstract_renderer.rb:33:in `instrument'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:39:in `block in render_template'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:47:in `render_with_layout'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:38:in `render_template'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:12:in `block in render'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/abstract_renderer.rb:22:in `wrap_formats'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:9:in `render'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/renderer.rb:36:in `render_template'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/renderer.rb:17:in `render'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/helpers/rendering_helper.rb:24:in `render'
+  /usr/local/lib/ruby/gems/1.9.1/gems/haml-3.1.4/lib/haml/helpers/action_view_mods.rb:13:in `render_with_haml'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/show_exceptions.rb:89:in `rescue_action_locally'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/show_exceptions.rb:69:in `render_exception'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/show_exceptions.rb:59:in `call'
+  /usr/local/lib/ruby/gems/1.9.1/gems/railties-3.1.0/lib/rails/rack/logger.rb:13:in `call'
+  /usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.5/lib/rack/methodoverride.rb:24:in `call'
+  /usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.5/lib/rack/runtime.rb:17:in `call'
+  /usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  /usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.5/lib/rack/lock.rb:15:in `call'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/static.rb:53:in `call'
+  /usr/local/lib/ruby/gems/1.9.1/gems/railties-3.1.0/lib/rails/engine.rb:455:in `call'
+  /usr/local/lib/ruby/gems/1.9.1/gems/railties-3.1.0/lib/rails/rack/content_length.rb:16:in `call'
+  /usr/local/lib/ruby/gems/1.9.1/gems/railties-3.1.0/lib/rails/rack/log_tailer.rb:14:in `call'
+  /usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.5/lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+Started POST "/transactions" for 84.204.51.226 at 2012-04-25 06:23:32 +0000
+  Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"вњ“", "authenticity_token"=>"locdDt0AAYV1QlbCiT92c1eEbuMm8GaWQHjVO58iJOw=", "transaction"=>{"from"=>"222444", "to"=>"111666", "change_date(1i)"=>"2012", "change_date(2i)"=>"4", "change_date(3i)"=>"25", "sum"=>"100"}, "commit"=>"Save Changes"}
+  [1m[35mAccount Load (0.1ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."account" = '222444' LIMIT 1
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."account" = '111666' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "transactions" ("change_date", "created_at", "from", "sum", "to", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["change_date", Wed, 25 Apr 2012 06:23:32 UTC +00:00], ["created_at", Wed, 25 Apr 2012 06:23:32 UTC +00:00], ["from", "222444"], ["sum", 100], ["to", "111666"], ["updated_at", Wed, 25 Apr 2012 06:23:32 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mUPDATE "accounts" SET "sum" = 7300, "updated_at" = '2012-04-25 06:23:32.704177' WHERE "accounts"."id" = 2[0m
+  [1m[35m (0.1ms)[0m  UPDATE "accounts" SET "sum" = 12200, "updated_at" = '2012-04-25 06:23:32.727545' WHERE "accounts"."id" = 1
+DEPRECATION WARNING: recipients(value) is deprecated. Please pass :to as hash key to mail() instead. (called from transaction_notification at /home/ubuntu/hw2_rottenpotatoes/app/mailers/notifier.rb:4)
+DEPRECATION WARNING: from(value) is deprecated. Please pass :from as hash key to mail() instead. (called from transaction_notification at /home/ubuntu/hw2_rottenpotatoes/app/mailers/notifier.rb:5)
+DEPRECATION WARNING: subject(value) is deprecated. Please pass :subject as hash key to mail() instead. (called from transaction_notification at /home/ubuntu/hw2_rottenpotatoes/app/mailers/notifier.rb:6)
+DEPRECATION WARNING: sent_on(value) is deprecated. Please pass :date as hash key to mail() instead. (called from transaction_notification at /home/ubuntu/hw2_rottenpotatoes/app/mailers/notifier.rb:7)
+Rendered notifier/transaction_notification.text.erb (0.7ms)
+Completed 500 Internal Server Error in 2001ms
+
+ActionView::Template::Error (Your template was not saved as valid UTF-8. Please either specify UTF-8 as the encoding for your template in your text editor, or mark the template with its encoding by inserting the following as the first line of the template:
+
+# encoding: <name of correct encoding>.
+
+The source of your template was:
+
+Вы получили банковский перевод через системы Т-Банка.
+=====================================================
+
+Счет отправителя:  <%= @transaction.from %> 
+Дата / время    :  <%= @transaction.change_date %> 
+Сумма           :  <%= @transaction.sum %> 
+):
+  app/controllers/transactions_controller.rb:71:in `create'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.8ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.2ms)
+
+
+Started POST "/transactions" for 84.204.51.226 at 2012-04-25 06:24:08 +0000
+  Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"вњ“", "authenticity_token"=>"locdDt0AAYV1QlbCiT92c1eEbuMm8GaWQHjVO58iJOw=", "transaction"=>{"from"=>"222444", "to"=>"111666", "change_date(1i)"=>"2012", "change_date(2i)"=>"4", "change_date(3i)"=>"25", "sum"=>"100"}, "commit"=>"Save Changes"}
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."account" = '222444' LIMIT 1[0m
+  [1m[35mAccount Load (0.1ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."account" = '111666' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "transactions" ("change_date", "created_at", "from", "sum", "to", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["change_date", Wed, 25 Apr 2012 06:24:08 UTC +00:00], ["created_at", Wed, 25 Apr 2012 06:24:08 UTC +00:00], ["from", "222444"], ["sum", 100], ["to", "111666"], ["updated_at", Wed, 25 Apr 2012 06:24:08 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  UPDATE "accounts" SET "sum" = 7200, "updated_at" = '2012-04-25 06:24:08.259018' WHERE "accounts"."id" = 2
+  [1m[36m (0.3ms)[0m  [1mUPDATE "accounts" SET "sum" = 12300, "updated_at" = '2012-04-25 06:24:08.280948' WHERE "accounts"."id" = 1[0m
+DEPRECATION WARNING: recipients(value) is deprecated. Please pass :to as hash key to mail() instead. (called from transaction_notification at /home/ubuntu/hw2_rottenpotatoes/app/mailers/notifier.rb:4)
+DEPRECATION WARNING: from(value) is deprecated. Please pass :from as hash key to mail() instead. (called from transaction_notification at /home/ubuntu/hw2_rottenpotatoes/app/mailers/notifier.rb:5)
+DEPRECATION WARNING: subject(value) is deprecated. Please pass :subject as hash key to mail() instead. (called from transaction_notification at /home/ubuntu/hw2_rottenpotatoes/app/mailers/notifier.rb:6)
+DEPRECATION WARNING: sent_on(value) is deprecated. Please pass :date as hash key to mail() instead. (called from transaction_notification at /home/ubuntu/hw2_rottenpotatoes/app/mailers/notifier.rb:7)
+Rendered notifier/transaction_notification.text.erb (0.6ms)
+Completed 500 Internal Server Error in 148ms
+
+ActionView::Template::Error (invalid byte sequence in UTF-8):
+  app/controllers/transactions_controller.rb:71:in `create'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.2ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.3ms)
+Error during failsafe response: ActionView::Template::Error
+  /usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/core_ext/string/output_safety.rb:106:in `concat'
+  /usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/core_ext/string/output_safety.rb:106:in `concat'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/buffers.rb:11:in `<<'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb:17:in `__usr_local_lib_ruby_gems_______gems_actionpack_______lib_action_dispatch_middleware_templates_rescues_template_error_erb__554104910_105324810'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/template.rb:144:in `block in render'
+  /usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/notifications.rb:55:in `instrument'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/template.rb:142:in `render'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:40:in `block (2 levels) in render_template'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/abstract_renderer.rb:33:in `block in instrument'
+  /usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/notifications.rb:53:in `block in instrument'
+  /usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  /usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/notifications.rb:53:in `instrument'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/abstract_renderer.rb:33:in `instrument'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:39:in `block in render_template'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:47:in `render_with_layout'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:38:in `render_template'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:12:in `block in render'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/abstract_renderer.rb:22:in `wrap_formats'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:9:in `render'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/renderer.rb:36:in `render_template'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/renderer.rb:17:in `render'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/helpers/rendering_helper.rb:24:in `render'
+  /usr/local/lib/ruby/gems/1.9.1/gems/haml-3.1.4/lib/haml/helpers/action_view_mods.rb:13:in `render_with_haml'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/show_exceptions.rb:89:in `rescue_action_locally'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/show_exceptions.rb:69:in `render_exception'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/show_exceptions.rb:59:in `call'
+  /usr/local/lib/ruby/gems/1.9.1/gems/railties-3.1.0/lib/rails/rack/logger.rb:13:in `call'
+  /usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.5/lib/rack/methodoverride.rb:24:in `call'
+  /usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.5/lib/rack/runtime.rb:17:in `call'
+  /usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  /usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.5/lib/rack/lock.rb:15:in `call'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/static.rb:53:in `call'
+  /usr/local/lib/ruby/gems/1.9.1/gems/railties-3.1.0/lib/rails/engine.rb:455:in `call'
+  /usr/local/lib/ruby/gems/1.9.1/gems/railties-3.1.0/lib/rails/rack/content_length.rb:16:in `call'
+  /usr/local/lib/ruby/gems/1.9.1/gems/railties-3.1.0/lib/rails/rack/log_tailer.rb:14:in `call'
+  /usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.5/lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+Started POST "/transactions" for 84.204.51.226 at 2012-04-25 06:27:43 +0000
+  Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"вњ“", "authenticity_token"=>"locdDt0AAYV1QlbCiT92c1eEbuMm8GaWQHjVO58iJOw=", "transaction"=>{"from"=>"222444", "to"=>"111666", "change_date(1i)"=>"2012", "change_date(2i)"=>"4", "change_date(3i)"=>"25", "sum"=>"100"}, "commit"=>"Save Changes"}
+  [1m[35mAccount Load (0.1ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."account" = '222444' LIMIT 1
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."account" = '111666' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "transactions" ("change_date", "created_at", "from", "sum", "to", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["change_date", Wed, 25 Apr 2012 06:27:43 UTC +00:00], ["created_at", Wed, 25 Apr 2012 06:27:43 UTC +00:00], ["from", "222444"], ["sum", 100], ["to", "111666"], ["updated_at", Wed, 25 Apr 2012 06:27:43 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mUPDATE "accounts" SET "sum" = 7100, "updated_at" = '2012-04-25 06:27:43.168449' WHERE "accounts"."id" = 2[0m
+  [1m[35m (0.1ms)[0m  UPDATE "accounts" SET "sum" = 12400, "updated_at" = '2012-04-25 06:27:43.191528' WHERE "accounts"."id" = 1
+DEPRECATION WARNING: recipients(value) is deprecated. Please pass :to as hash key to mail() instead. (called from transaction_notification at /home/ubuntu/hw2_rottenpotatoes/app/mailers/notifier.rb:4)
+DEPRECATION WARNING: from(value) is deprecated. Please pass :from as hash key to mail() instead. (called from transaction_notification at /home/ubuntu/hw2_rottenpotatoes/app/mailers/notifier.rb:5)
+DEPRECATION WARNING: subject(value) is deprecated. Please pass :subject as hash key to mail() instead. (called from transaction_notification at /home/ubuntu/hw2_rottenpotatoes/app/mailers/notifier.rb:6)
+DEPRECATION WARNING: sent_on(value) is deprecated. Please pass :date as hash key to mail() instead. (called from transaction_notification at /home/ubuntu/hw2_rottenpotatoes/app/mailers/notifier.rb:7)
+Rendered notifier/transaction_notification.text.erb (0.6ms)
+Completed 500 Internal Server Error in 115ms
+
+ActionView::Template::Error (Your template was not saved as valid utf-8. Please either specify utf-8 as the encoding for your template in your text editor, or mark the template with its encoding by inserting the following as the first line of the template:
+
+# encoding: <name of correct encoding>.
+
+The source of your template was:
+
+
+Вы получили банковский перевод через системы Т-Банка.
+=====================================================
+
+Счет отправителя:  <%= @transaction.from %> 
+Дата / время    :  <%= @transaction.change_date %> 
+Сумма           :  <%= @transaction.sum %> 
+):
+  app/controllers/transactions_controller.rb:71:in `create'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (48.1ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (51.7ms)
+^C[2012-04-25 06:27:54] INFO  going to shutdown ...
+[2012-04-25 06:27:55] INFO  WEBrick::HTTPServer#start done.
+Exiting
+]0;ubuntu@ip-10-234-217-96: ~/hw2_rottenpotatoesubuntu@ip-10-234-217-96:~/hw2_rottenpotatoes$ rails server
+=> Booting WEBrick
+=> Rails 3.1.0 application starting in development on http://0.0.0.0:3000
+=> Call with -d to detach
+=> Ctrl-C to shutdown server
+[2012-04-25 06:30:18] INFO  WEBrick 1.3.1
+[2012-04-25 06:30:18] INFO  ruby 1.9.2 (2011-07-09) [i686-linux]
+[2012-04-25 06:30:18] INFO  WEBrick::HTTPServer#start: pid=1151 port=3000
+
+
+Started POST "/transactions" for 84.204.51.226 at 2012-04-25 06:30:24 +0000
+  Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"вњ“", "authenticity_token"=>"locdDt0AAYV1QlbCiT92c1eEbuMm8GaWQHjVO58iJOw=", "transaction"=>{"from"=>"222444", "to"=>"111666", "change_date(1i)"=>"2012", "change_date(2i)"=>"4", "change_date(3i)"=>"25", "sum"=>"100"}, "commit"=>"Save Changes"}
+  [1m[36mAccount Load (0.3ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."account" = '222444' LIMIT 1[0m
+  [1m[35mAccount Load (0.2ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."account" = '111666' LIMIT 1
+  [1m[36mSQL (17.1ms)[0m  [1mINSERT INTO "transactions" ("change_date", "created_at", "from", "sum", "to", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["change_date", Wed, 25 Apr 2012 06:30:27 UTC +00:00], ["created_at", Wed, 25 Apr 2012 06:30:27 UTC +00:00], ["from", "222444"], ["sum", 100], ["to", "111666"], ["updated_at", Wed, 25 Apr 2012 06:30:27 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  UPDATE "accounts" SET "sum" = 7000, "updated_at" = '2012-04-25 06:30:27.064315' WHERE "accounts"."id" = 2
+  [1m[36m (0.1ms)[0m  [1mUPDATE "accounts" SET "sum" = 12500, "updated_at" = '2012-04-25 06:30:27.089424' WHERE "accounts"."id" = 1[0m
+DEPRECATION WARNING: recipients(value) is deprecated. Please pass :to as hash key to mail() instead. (called from transaction_notification at /home/ubuntu/hw2_rottenpotatoes/app/mailers/notifier.rb:4)
+DEPRECATION WARNING: from(value) is deprecated. Please pass :from as hash key to mail() instead. (called from transaction_notification at /home/ubuntu/hw2_rottenpotatoes/app/mailers/notifier.rb:5)
+DEPRECATION WARNING: subject(value) is deprecated. Please pass :subject as hash key to mail() instead. (called from transaction_notification at /home/ubuntu/hw2_rottenpotatoes/app/mailers/notifier.rb:6)
+DEPRECATION WARNING: sent_on(value) is deprecated. Please pass :date as hash key to mail() instead. (called from transaction_notification at /home/ubuntu/hw2_rottenpotatoes/app/mailers/notifier.rb:7)
+Rendered notifier/transaction_notification.text.erb (0.6ms)
+DEPRECATION WARNING: charset() is deprecated and will be removed in future versions. (called from create at /home/ubuntu/hw2_rottenpotatoes/app/controllers/transactions_controller.rb:71)
+
+Sent mail to vasyaabr@gmail.com (85ms)
+Date: Wed, 25 Apr 2012 06:30:28 +0000
+From: =?UTF-8?B?INCiLdCR0LDQvdC6?=
+To: =?UTF-8?B?0JvRg9C60L7QvNC40YA=?= <vasyaabr@gmail.com>
+Message-ID: <4f979a04dde03_47f55a8bf628411@ip-10-234-217-96.mail>
+Subject: =?UTF-8?Q?=D0=91=D0=B0=D0=BD=D0=BA=D0=BE=D0=B2=D1=81=D0=BA=D0=B8=D0=B9?=
+ =?UTF-8?Q?_=D0=BF=D0=B5=D1=80=D0=B5=D0=B2=D0=BE=D0=B4?=
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+CtCS0Ysg0L/QvtC70YPRh9C40LvQuCDQtNC10L3QtdC20L3Ri9C5INC/0LXR
+gNC10LLQvtC0INGH0LXRgNC10Lcg0YHQuNGB0YLQtdC80Ysg0KIt0JHQsNC9
+0LrQsC4KPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
+PT09PT09PT09PT09CgrQodGH0LXRgiDQvtGC0L/RgNCw0LLQuNGC0LXQu9GP
+OiAgMjIyNDQ0IArQlNCw0YLQsCAvINCy0YDQtdC80Y8gICAgOiAgMjAxMi0w
+NC0yNSAwNjozMDoyNyBVVEMgCtCh0YPQvNC80LAgICAgICAgICAgIDogIDEw
+MCAKCtCV0YHQu9C4INC00LDQvdC90YvQuSDQv9C10YDQtdCy0L7QtCDQvtGC
+0L/RgNCw0LLQu9C10L0g0LLQsNC8INC/0L4g0L7RiNC40LHQutC1IC0g0YHQ
+stGP0LbQuNGC0LXRgdGMINGBINC90LDQvNC4IQo=
+Redirected to http://ec2-176-34-202-40.eu-west-1.compute.amazonaws.com:3000/transactions
+Completed 302 Found in 2012ms
+
+
+Started GET "/transactions" for 84.204.51.226 at 2012-04-25 06:30:29 +0000
+  Processing by TransactionsController#index as HTML
+  [1m[35mTransaction Load (0.1ms)[0m  SELECT "transactions".* FROM "transactions" 
+Rendered transactions/index.html.haml within layouts/application (12.3ms)
+Completed 200 OK in 40ms (Views: 38.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 06:30:29 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 06:30:29 +0000
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 06:30:29 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 06:30:32 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/transactions" for 84.204.51.226 at 2012-04-25 06:36:10 +0000
+  Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"вњ“", "authenticity_token"=>"locdDt0AAYV1QlbCiT92c1eEbuMm8GaWQHjVO58iJOw=", "transaction"=>{"from"=>"222444", "to"=>"111666", "change_date(1i)"=>"2012", "change_date(2i)"=>"4", "change_date(3i)"=>"25", "sum"=>"100"}, "commit"=>"Save Changes"}
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."account" = '222444' LIMIT 1[0m
+  [1m[35mAccount Load (0.2ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."account" = '111666' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "transactions" ("change_date", "created_at", "from", "sum", "to", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["change_date", Wed, 25 Apr 2012 06:36:10 UTC +00:00], ["created_at", Wed, 25 Apr 2012 06:36:10 UTC +00:00], ["from", "222444"], ["sum", 100], ["to", "111666"], ["updated_at", Wed, 25 Apr 2012 06:36:10 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  UPDATE "accounts" SET "sum" = 6900, "updated_at" = '2012-04-25 06:36:10.864220' WHERE "accounts"."id" = 2
+  [1m[36m (0.1ms)[0m  [1mUPDATE "accounts" SET "sum" = 12600, "updated_at" = '2012-04-25 06:36:10.887550' WHERE "accounts"."id" = 1[0m
+Rendered notifier/transaction_notification.text.erb (0.1ms)
+
+Sent mail to vasyaabr@gmail.com (4ms)
+Date: Wed, 25 Apr 2012 06:36:10 +0000
+To: vasyaabr@gmail.com
+Message-ID: <4f979b5ae2435_47f637f6122853a@ip-10-234-217-96.mail>
+Subject: =?UTF-8?Q?=D0=A2-=D0=91=D0=B0=D0=BD=D0=BA_:?=
+ =?UTF-8?Q?_=D0=BF=D0=BE=D0=BB=D1=83=D1=87=D0=B5=D0=BD?=
+ =?UTF-8?Q?_=D0=B1=D0=B0=D0=BD=D0=BA=D0=BE=D0=B2=D1=81=D0=BA=D0=B8=D0=B9?=
+ =?UTF-8?Q?_=D0=BF=D0=B5=D1=80=D0=B5=D0=B2=D0=BE=D0=B4?=
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+CtCS0Ysg0L/QvtC70YPRh9C40LvQuCDQtNC10L3QtdC20L3Ri9C5INC/0LXR
+gNC10LLQvtC0INGH0LXRgNC10Lcg0YHQuNGB0YLQtdC80Ysg0KIt0JHQsNC9
+0LrQsC4KPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
+PT09PT09PT09PT09CgrQodGH0LXRgiDQvtGC0L/RgNCw0LLQuNGC0LXQu9GP
+OiAgMjIyNDQ0IArQlNCw0YLQsCAvINCy0YDQtdC80Y8gICAgOiAgMjAxMi0w
+NC0yNSAwNjozNjoxMCBVVEMgCtCh0YPQvNC80LAgICAgICAgICAgIDogIDEw
+MCAKCtCV0YHQu9C4INC00LDQvdC90YvQuSDQv9C10YDQtdCy0L7QtCDQvtGC
+0L/RgNCw0LLQu9C10L0g0LLQsNC8INC/0L4g0L7RiNC40LHQutC1IC0g0YHQ
+stGP0LbQuNGC0LXRgdGMINGBINC90LDQvNC4IQo=
+Redirected to http://ec2-176-34-202-40.eu-west-1.compute.amazonaws.com:3000/transactions
+Completed 302 Found in 120ms
+
+
+Started GET "/transactions" for 84.204.51.226 at 2012-04-25 06:36:11 +0000
+  Processing by TransactionsController#index as HTML
+  [1m[35mTransaction Load (0.1ms)[0m  SELECT "transactions".* FROM "transactions" 
+Rendered transactions/index.html.haml within layouts/application (9.7ms)
+Completed 200 OK in 32ms (Views: 30.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 06:36:11 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 06:36:11 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 06:36:11 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 06:36:11 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+^C[2012-04-25 06:43:52] INFO  going to shutdown ...
+[2012-04-25 06:43:52] INFO  WEBrick::HTTPServer#start done.
+Exiting
+]0;ubuntu@ip-10-234-217-96: ~/hw2_rottenpotatoesubuntu@ip-10-234-217-96:~/hw2_rottenpotatoes$ rails server
+=> Booting WEBrick
+=> Rails 3.1.0 application starting in development on http://0.0.0.0:3000
+=> Call with -d to detach
+=> Ctrl-C to shutdown server
+[2012-04-25 06:44:23] INFO  WEBrick 1.3.1
+[2012-04-25 06:44:23] INFO  ruby 1.9.2 (2011-07-09) [i686-linux]
+[2012-04-25 06:44:23] INFO  WEBrick::HTTPServer#start: pid=1167 port=3000
+
+
+Started GET "/" for 84.204.51.226 at 2012-04-25 06:44:39 +0000
+  Processing by TransactionsController#send as HTML
+Rendered transactions/send.html.haml within layouts/application (4.2ms)
+Completed 200 OK in 123ms (Views: 122.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 06:44:40 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 06:44:40 +0000
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 06:44:40 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 06:44:43 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/bans" for 84.204.51.226 at 2012-04-25 06:44:45 +0000
+  Processing by BansController#index as HTML
+  [1m[36mBan Load (0.2ms)[0m  [1mSELECT "bans".* FROM "bans" [0m
+Rendered bans/index.html.haml within layouts/application (6.8ms)
+Completed 200 OK in 28ms (Views: 26.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 06:44:45 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 06:44:45 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 06:44:45 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 06:44:45 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/transactions" for 84.204.51.226 at 2012-04-25 06:44:50 +0000
+  Processing by TransactionsController#index as HTML
+  [1m[35mTransaction Load (0.1ms)[0m  SELECT "transactions".* FROM "transactions" 
+Rendered transactions/index.html.haml within layouts/application (15.9ms)
+Completed 200 OK in 37ms (Views: 35.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 06:44:50 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 06:44:50 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 06:44:50 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 06:44:50 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/transactions/new" for 84.204.51.226 at 2012-04-25 06:44:52 +0000
+  Processing by TransactionsController#new as HTML
+Rendered transactions/new.html.haml within layouts/application (6.0ms)
+Completed 200 OK in 25ms (Views: 24.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 06:44:52 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 06:44:52 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 06:44:52 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 06:44:52 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started POST "/transactions" for 84.204.51.226 at 2012-04-25 06:45:02 +0000
+  Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"вњ“", "authenticity_token"=>"locdDt0AAYV1QlbCiT92c1eEbuMm8GaWQHjVO58iJOw=", "transaction"=>{"from"=>"222444", "to"=>"111666", "change_date(1i)"=>"2012", "change_date(2i)"=>"4", "change_date(3i)"=>"25", "sum"=>"100"}, "commit"=>"Save Changes"}
+  [1m[36mAccount Load (0.2ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."account" = '222444' LIMIT 1[0m
+  [1m[35mAccount Load (0.2ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."account" = '111666' LIMIT 1
+  [1m[36mSQL (55.7ms)[0m  [1mINSERT INTO "transactions" ("change_date", "created_at", "from", "sum", "to", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["change_date", Wed, 25 Apr 2012 06:45:02 UTC +00:00], ["created_at", Wed, 25 Apr 2012 06:45:02 UTC +00:00], ["from", "222444"], ["sum", 100], ["to", "111666"], ["updated_at", Wed, 25 Apr 2012 06:45:02 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  UPDATE "accounts" SET "sum" = 6800, "updated_at" = '2012-04-25 06:45:02.862809' WHERE "accounts"."id" = 2
+  [1m[36m (0.2ms)[0m  [1mUPDATE "accounts" SET "sum" = 12700, "updated_at" = '2012-04-25 06:45:02.888260' WHERE "accounts"."id" = 1[0m
+Rendered notifier/transaction_notification.text.erb (0.7ms)
+
+Sent mail to vasyaabr@gmail.com (93ms)
+Date: Wed, 25 Apr 2012 06:45:04 +0000
+To: vasyaabr@gmail.com
+Message-ID: <4f979d70a06a7_48f4b65018585b4@ip-10-234-217-96.mail>
+Subject: =?UTF-8?Q?=D0=A2-=D0=91=D0=B0=D0=BD=D0=BA_:?=
+ =?UTF-8?Q?_=D0=BF=D0=BE=D0=BB=D1=83=D1=87=D0=B5=D0=BD?=
+ =?UTF-8?Q?_=D0=B1=D0=B0=D0=BD=D0=BA=D0=BE=D0=B2=D1=81=D0=BA=D0=B8=D0=B9?=
+ =?UTF-8?Q?_=D0=BF=D0=B5=D1=80=D0=B5=D0=B2=D0=BE=D0=B4?=
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+CtCS0Ysg0L/QvtC70YPRh9C40LvQuCDQtNC10L3QtdC20L3Ri9C5INC/0LXR
+gNC10LLQvtC0INGH0LXRgNC10Lcg0YHQuNGB0YLQtdC80Ysg0KIt0JHQsNC9
+0LrQsC4KPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
+PT09PT09PT09PT09CgrQodGH0LXRgiDQvtGC0L/RgNCw0LLQuNGC0LXQu9GP
+OiAgMjIyNDQ0IArQlNCw0YLQsCAvINCy0YDQtdC80Y8gICAgOiAgMjAxMi0w
+NC0yNSAwNjo0NTowMiBVVEMgCtCh0YPQvNC80LAgICAgICAgICAgIDogIDEw
+MCAKCtCV0YHQu9C4INC00LDQvdC90YvQuSDQv9C10YDQtdCy0L7QtCDQvtGC
+0L/RgNCw0LLQu9C10L0g0LLQsNC8INC/0L4g0L7RiNC40LHQutC1IC0g0YHQ
+stGP0LbQuNGC0LXRgdGMINGBINC90LDQvNC4IQo=
+Redirected to http://ec2-176-34-202-40.eu-west-1.compute.amazonaws.com:3000/transactions
+Completed 302 Found in 1936ms
+
+
+Started GET "/transactions" for 84.204.51.226 at 2012-04-25 06:45:06 +0000
+  Processing by TransactionsController#index as HTML
+  [1m[35mTransaction Load (0.1ms)[0m  SELECT "transactions".* FROM "transactions" 
+Rendered transactions/index.html.haml within layouts/application (10.8ms)
+Completed 200 OK in 32ms (Views: 29.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 06:45:06 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 06:45:06 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 06:45:06 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 06:45:06 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+^C[2012-04-25 06:46:32] INFO  going to shutdown ...
+[2012-04-25 06:46:32] INFO  WEBrick::HTTPServer#start done.
+Exiting
+]0;ubuntu@ip-10-234-217-96: ~/hw2_rottenpotatoesubuntu@ip-10-234-217-96:~/hw2_rottenpotatoes$ rails server
+=> Booting WEBrick
+=> Rails 3.1.0 application starting in development on http://0.0.0.0:3000
+=> Call with -d to detach
+=> Ctrl-C to shutdown server
+[2012-04-25 06:46:38] INFO  WEBrick 1.3.1
+[2012-04-25 06:46:38] INFO  ruby 1.9.2 (2011-07-09) [i686-linux]
+[2012-04-25 06:46:38] INFO  WEBrick::HTTPServer#start: pid=1177 port=3000
+
+
+Started GET "/accounts/1" for 84.204.51.226 at 2012-04-25 06:46:45 +0000
+  Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAccount Load (0.3ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Rendered accounts/show.html.haml within layouts/application (18.4ms)
+Completed 200 OK in 123ms (Views: 120.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 06:46:47 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 06:46:47 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 06:46:47 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 06:46:47 +0000
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/transactions" for 84.204.51.226 at 2012-04-25 06:46:50 +0000
+  Processing by TransactionsController#index as HTML
+  [1m[35mTransaction Load (0.2ms)[0m  SELECT "transactions".* FROM "transactions" 
+Rendered transactions/index.html.haml within layouts/application (18.7ms)
+Completed 200 OK in 76ms (Views: 74.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 06:46:50 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 06:46:50 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 06:46:50 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 06:46:50 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/transactions/new" for 84.204.51.226 at 2012-04-25 06:46:51 +0000
+  Processing by TransactionsController#new as HTML
+Rendered transactions/new.html.haml within layouts/application (5.7ms)
+Completed 200 OK in 25ms (Views: 24.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 06:46:52 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 06:46:52 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 06:46:52 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 06:46:52 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started POST "/transactions" for 84.204.51.226 at 2012-04-25 06:46:59 +0000
+  Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"вњ“", "authenticity_token"=>"locdDt0AAYV1QlbCiT92c1eEbuMm8GaWQHjVO58iJOw=", "transaction"=>{"from"=>"222444", "to"=>"111666", "change_date(1i)"=>"2012", "change_date(2i)"=>"4", "change_date(3i)"=>"25", "sum"=>"200"}, "commit"=>"Save Changes"}
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."account" = '222444' LIMIT 1[0m
+  [1m[35mAccount Load (0.2ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."account" = '111666' LIMIT 1
+  [1m[36mSQL (47.8ms)[0m  [1mINSERT INTO "transactions" ("change_date", "created_at", "from", "sum", "to", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["change_date", Wed, 25 Apr 2012 06:46:59 UTC +00:00], ["created_at", Wed, 25 Apr 2012 06:46:59 UTC +00:00], ["from", "222444"], ["sum", 200], ["to", "111666"], ["updated_at", Wed, 25 Apr 2012 06:46:59 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  UPDATE "accounts" SET "sum" = 6600, "updated_at" = '2012-04-25 06:46:59.832743' WHERE "accounts"."id" = 2
+  [1m[36m (0.1ms)[0m  [1mUPDATE "accounts" SET "sum" = 12900, "updated_at" = '2012-04-25 06:46:59.848961' WHERE "accounts"."id" = 1[0m
+Rendered notifier/transaction_notification.text.erb (0.7ms)
+
+Sent mail to vasyaabr@gmail.com (98ms)
+Date: Wed, 25 Apr 2012 06:47:01 +0000
+To: vasyaabr@gmail.com
+Message-ID: <4f979de5baeb6_49956404a660ac@ip-10-234-217-96.mail>
+Subject: =?UTF-8?Q?=D0=A2-=D0=91=D0=B0=D0=BD=D0=BA_:?=
+ =?UTF-8?Q?_=D0=BF=D0=BE=D0=BB=D1=83=D1=87=D0=B5=D0=BD?=
+ =?UTF-8?Q?_=D0=B1=D0=B0=D0=BD=D0=BA=D0=BE=D0=B2=D1=81=D0=BA=D0=B8=D0=B9?=
+ =?UTF-8?Q?_=D0=BF=D0=B5=D1=80=D0=B5=D0=B2=D0=BE=D0=B4?=
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+CtCS0Ysg0L/QvtC70YPRh9C40LvQuCDQtNC10L3QtdC20L3Ri9C5INC/0LXR
+gNC10LLQvtC0INGH0LXRgNC10Lcg0YHQuNGB0YLQtdC80Ysg0KIt0JHQsNC9
+0LrQsC4KPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
+PT09PT09PT09PT09CgrQodGH0LXRgiDQvtGC0L/RgNCw0LLQuNGC0LXQu9GP
+OiAgMjIyNDQ0IArQlNCw0YLQsCAvINCy0YDQtdC80Y8gICAgOiAgMjAxMi0w
+NC0yNSAwNjo0Njo1OSBVVEMgCtCh0YPQvNC80LAgICAgICAgICAgIDogIDIw
+MCAKCtCV0YHQu9C4INC00LDQvdC90YvQuSDQv9C10YDQtdCy0L7QtCDQvtGC
+0L/RgNCw0LLQu9C10L0g0LLQsNC8INC/0L4g0L7RiNC40LHQutC1IC0g0YHQ
+stGP0LbQuNGC0LXRgdGMINGBINC90LDQvNC4IQo=
+Redirected to http://ec2-176-34-202-40.eu-west-1.compute.amazonaws.com:3000/transactions
+Completed 302 Found in 2071ms
+
+
+Started GET "/transactions" for 84.204.51.226 at 2012-04-25 06:47:01 +0000
+  Processing by TransactionsController#index as HTML
+  [1m[35mTransaction Load (0.1ms)[0m  SELECT "transactions".* FROM "transactions" 
+Rendered transactions/index.html.haml within layouts/application (12.6ms)
+Completed 200 OK in 36ms (Views: 33.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 06:47:03 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 06:47:03 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 06:47:03 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 06:47:03 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+^C[2012-04-25 06:50:45] INFO  going to shutdown ...
+[2012-04-25 06:50:45] INFO  WEBrick::HTTPServer#start done.
+Exiting
+]0;ubuntu@ip-10-234-217-96: ~/hw2_rottenpotatoesubuntu@ip-10-234-217-96:~/hw2_rottenpotatoes$ rails server
+=> Booting WEBrick
+=> Rails 3.1.0 application starting in development on http://0.0.0.0:3000
+=> Call with -d to detach
+=> Ctrl-C to shutdown server
+[2012-04-25 06:50:53] INFO  WEBrick 1.3.1
+[2012-04-25 06:50:53] INFO  ruby 1.9.2 (2011-07-09) [i686-linux]
+[2012-04-25 06:50:53] INFO  WEBrick::HTTPServer#start: pid=1187 port=3000
+
+
+Started POST "/transactions" for 84.204.51.226 at 2012-04-25 06:51:01 +0000
+  Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"вњ“", "authenticity_token"=>"locdDt0AAYV1QlbCiT92c1eEbuMm8GaWQHjVO58iJOw=", "transaction"=>{"from"=>"222444", "to"=>"111666", "change_date(1i)"=>"2012", "change_date(2i)"=>"4", "change_date(3i)"=>"25", "sum"=>"200"}, "commit"=>"Save Changes"}
+  [1m[36mAccount Load (0.3ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."account" = '222444' LIMIT 1[0m
+  [1m[35mAccount Load (0.3ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."account" = '111666' LIMIT 1
+  [1m[36mSQL (19.5ms)[0m  [1mINSERT INTO "transactions" ("change_date", "created_at", "from", "sum", "to", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["change_date", Wed, 25 Apr 2012 06:51:04 UTC +00:00], ["created_at", Wed, 25 Apr 2012 06:51:04 UTC +00:00], ["from", "222444"], ["sum", 200], ["to", "111666"], ["updated_at", Wed, 25 Apr 2012 06:51:04 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  UPDATE "accounts" SET "sum" = 6400, "updated_at" = '2012-04-25 06:51:04.081854' WHERE "accounts"."id" = 2
+  [1m[36m (0.3ms)[0m  [1mUPDATE "accounts" SET "sum" = 13100, "updated_at" = '2012-04-25 06:51:04.112895' WHERE "accounts"."id" = 1[0m
+Rendered notifier/transaction_notification.text.erb (0.7ms)
+
+Sent mail to vasyaabr@gmail.com (88ms)
+Date: Wed, 25 Apr 2012 06:51:05 +0000
+To: vasyaabr@gmail.com
+Message-ID: <4f979ed9f1cc5_4a356a41e0936fb@ip-10-234-217-96.mail>
+Subject: =?UTF-8?Q?=D0=A2-=D0=91=D0=B0=D0=BD=D0=BA_:?=
+ =?UTF-8?Q?_=D0=BF=D0=BE=D0=BB=D1=83=D1=87=D0=B5=D0=BD?=
+ =?UTF-8?Q?_=D0=B1=D0=B0=D0=BD=D0=BA=D0=BE=D0=B2=D1=81=D0=BA=D0=B8=D0=B9?=
+ =?UTF-8?Q?_=D0=BF=D0=B5=D1=80=D0=B5=D0=B2=D0=BE=D0=B4?=
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+CtCS0Ysg0L/QvtC70YPRh9C40LvQuCDQtNC10L3QtdC20L3Ri9C5INC/0LXR
+gNC10LLQvtC0INGH0LXRgNC10Lcg0YHQuNGB0YLQtdC80Ysg0KIt0JHQsNC9
+0LrQsC4KPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
+PT09PT09PT09PT09CgrQodGH0LXRgiDQvtGC0L/RgNCw0LLQuNGC0LXQu9GP
+OiAgMjIyNDQ0IArQlNCw0YLQsCAvINCy0YDQtdC80Y8gICAgOiAgMjAxMi0w
+NC0yNSAwNjo1MTowNCBVVEMgCtCh0YPQvNC80LAgICAgICAgICAgIDogIDIw
+MCAKCtCV0YHQu9C4INC00LDQvdC90YvQuSDQv9C10YDQtdCy0L7QtCDQvtGC
+0L/RgNCw0LLQu9C10L0g0LLQsNC8INC/0L4g0L7RiNC40LHQutC1IC0g0YHQ
+stGP0LbQuNGC0LXRgdGMINGBINC90LDQvNC4IQo=
+Completed 500 Internal Server Error in 2049ms
+
+ArgumentError (A sender (Return-Path, Sender or From) required to send a message):
+  app/controllers/transactions_controller.rb:71:in `create'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.7ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.2ms)
+Error during failsafe response: ActionView::Template::Error
+  /usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/core_ext/string/output_safety.rb:106:in `concat'
+  /usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/core_ext/string/output_safety.rb:106:in `concat'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/buffers.rb:11:in `<<'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb:10:in `__usr_local_lib_ruby_gems_______gems_actionpack_______lib_action_dispatch_middleware_templates_rescues_diagnostics_erb___784350598_102879800'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/template.rb:144:in `block in render'
+  /usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/notifications.rb:55:in `instrument'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/template.rb:142:in `render'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:40:in `block (2 levels) in render_template'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/abstract_renderer.rb:33:in `block in instrument'
+  /usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/notifications.rb:53:in `block in instrument'
+  /usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  /usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/notifications.rb:53:in `instrument'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/abstract_renderer.rb:33:in `instrument'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:39:in `block in render_template'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:47:in `render_with_layout'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:38:in `render_template'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:12:in `block in render'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/abstract_renderer.rb:22:in `wrap_formats'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:9:in `render'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/renderer.rb:36:in `render_template'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/renderer/renderer.rb:17:in `render'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_view/helpers/rendering_helper.rb:24:in `render'
+  /usr/local/lib/ruby/gems/1.9.1/gems/haml-3.1.4/lib/haml/helpers/action_view_mods.rb:13:in `render_with_haml'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/show_exceptions.rb:89:in `rescue_action_locally'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/show_exceptions.rb:69:in `render_exception'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/show_exceptions.rb:59:in `call'
+  /usr/local/lib/ruby/gems/1.9.1/gems/railties-3.1.0/lib/rails/rack/logger.rb:13:in `call'
+  /usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.5/lib/rack/methodoverride.rb:24:in `call'
+  /usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.5/lib/rack/runtime.rb:17:in `call'
+  /usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  /usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.5/lib/rack/lock.rb:15:in `call'
+  /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/static.rb:53:in `call'
+  /usr/local/lib/ruby/gems/1.9.1/gems/railties-3.1.0/lib/rails/engine.rb:455:in `call'
+  /usr/local/lib/ruby/gems/1.9.1/gems/railties-3.1.0/lib/rails/rack/content_length.rb:16:in `call'
+  /usr/local/lib/ruby/gems/1.9.1/gems/railties-3.1.0/lib/rails/rack/log_tailer.rb:14:in `call'
+  /usr/local/lib/ruby/gems/1.9.1/gems/rack-1.3.5/lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+Started POST "/transactions" for 84.204.51.226 at 2012-04-25 06:53:10 +0000
+  Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"вњ“", "authenticity_token"=>"locdDt0AAYV1QlbCiT92c1eEbuMm8GaWQHjVO58iJOw=", "transaction"=>{"from"=>"222444", "to"=>"111666", "change_date(1i)"=>"2012", "change_date(2i)"=>"4", "change_date(3i)"=>"25", "sum"=>"200"}, "commit"=>"Save Changes"}
+  [1m[35mAccount Load (0.2ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."account" = '222444' LIMIT 1
+  [1m[36mAccount Load (0.3ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."account" = '111666' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "transactions" ("change_date", "created_at", "from", "sum", "to", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["change_date", Wed, 25 Apr 2012 06:53:10 UTC +00:00], ["created_at", Wed, 25 Apr 2012 06:53:10 UTC +00:00], ["from", "222444"], ["sum", 200], ["to", "111666"], ["updated_at", Wed, 25 Apr 2012 06:53:10 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mUPDATE "accounts" SET "sum" = 6200, "updated_at" = '2012-04-25 06:53:10.780778' WHERE "accounts"."id" = 2[0m
+  [1m[35m (0.1ms)[0m  UPDATE "accounts" SET "sum" = 13300, "updated_at" = '2012-04-25 06:53:10.807608' WHERE "accounts"."id" = 1
+Completed 500 Internal Server Error in 120ms
+
+SyntaxError (/home/ubuntu/hw2_rottenpotatoes/app/mailers/notifier.rb:6: syntax error, unexpected tSYMBEG, expecting ')'
+    	 :to => to.mail,
+    	  ^
+/home/ubuntu/hw2_rottenpotatoes/app/mailers/notifier.rb:7: syntax error, unexpected tASSOC, expecting tCOLON2 or '[' or '.'
+         :subject => "Рў-Р‘Р°РЅРє : РїРѕР»СѓС‡Рµ...
+                    ^
+/home/ubuntu/hw2_rottenpotatoes/app/mailers/notifier.rb:7: syntax error, unexpected ',', expecting keyword_end
+/home/ubuntu/hw2_rottenpotatoes/app/mailers/notifier.rb:8: syntax error, unexpected ')', expecting keyword_end):
+  app/controllers/transactions_controller.rb:71:in `create'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.2ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.7ms)
+
+
+Started POST "/transactions" for 84.204.51.226 at 2012-04-25 06:53:49 +0000
+  Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"вњ“", "authenticity_token"=>"locdDt0AAYV1QlbCiT92c1eEbuMm8GaWQHjVO58iJOw=", "transaction"=>{"from"=>"222444", "to"=>"111666", "change_date(1i)"=>"2012", "change_date(2i)"=>"4", "change_date(3i)"=>"25", "sum"=>"11"}, "commit"=>"Save Changes"}
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."account" = '222444' LIMIT 1[0m
+  [1m[35mAccount Load (0.1ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."account" = '111666' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "transactions" ("change_date", "created_at", "from", "sum", "to", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["change_date", Wed, 25 Apr 2012 06:53:49 UTC +00:00], ["created_at", Wed, 25 Apr 2012 06:53:49 UTC +00:00], ["from", "222444"], ["sum", 11], ["to", "111666"], ["updated_at", Wed, 25 Apr 2012 06:53:49 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  UPDATE "accounts" SET "sum" = 6189, "updated_at" = '2012-04-25 06:53:49.752552' WHERE "accounts"."id" = 2
+  [1m[36m (0.2ms)[0m  [1mUPDATE "accounts" SET "sum" = 13311, "updated_at" = '2012-04-25 06:53:49.769696' WHERE "accounts"."id" = 1[0m
+Rendered notifier/transaction_notification.text.erb (0.1ms)
+
+Sent mail to vasyaabr@gmail.com (2067ms)
+Date: Wed, 25 Apr 2012 06:53:49 +0000
+From: vasyaabr@gmail.com
+To: vasyaabr@gmail.com
+Message-ID: <4f979f7dd4bf0_4a360e159093770@ip-10-234-217-96.mail>
+Subject: =?UTF-8?Q?=D0=A2-=D0=91=D0=B0=D0=BD=D0=BA_:?=
+ =?UTF-8?Q?_=D0=BF=D0=BE=D0=BB=D1=83=D1=87=D0=B5=D0=BD?=
+ =?UTF-8?Q?_=D0=B1=D0=B0=D0=BD=D0=BA=D0=BE=D0=B2=D1=81=D0=BA=D0=B8=D0=B9?=
+ =?UTF-8?Q?_=D0=BF=D0=B5=D1=80=D0=B5=D0=B2=D0=BE=D0=B4?=
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+CtCS0Ysg0L/QvtC70YPRh9C40LvQuCDQtNC10L3QtdC20L3Ri9C5INC/0LXR
+gNC10LLQvtC0INGH0LXRgNC10Lcg0YHQuNGB0YLQtdC80Ysg0KIt0JHQsNC9
+0LrQsC4KPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
+PT09PT09PT09PT09CgrQodGH0LXRgiDQvtGC0L/RgNCw0LLQuNGC0LXQu9GP
+OiAgMjIyNDQ0IArQlNCw0YLQsCAvINCy0YDQtdC80Y8gICAgOiAgMjAxMi0w
+NC0yNSAwNjo1Mzo0OSBVVEMgCtCh0YPQvNC80LAgICAgICAgICAgIDogIDEx
+IAoK0JXRgdC70Lgg0LTQsNC90L3Ri9C5INC/0LXRgNC10LLQvtC0INC+0YLQ
+v9GA0LDQstC70LXQvSDQstCw0Lwg0L/QviDQvtGI0LjQsdC60LUgLSDRgdCy
+0Y/QttC40YLQtdGB0Ywg0YEg0L3QsNC80LghCg==
+Redirected to http://ec2-176-34-202-40.eu-west-1.compute.amazonaws.com:3000/transactions
+Completed 302 Found in 2237ms
+
+
+Started GET "/transactions" for 84.204.51.226 at 2012-04-25 06:53:52 +0000
+  Processing by TransactionsController#index as HTML
+  [1m[35mTransaction Load (0.2ms)[0m  SELECT "transactions".* FROM "transactions" 
+Rendered transactions/index.html.haml within layouts/application (17.2ms)
+Completed 200 OK in 93ms (Views: 91.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 06:53:52 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 06:53:52 +0000
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 06:53:52 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 06:53:55 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/accounts" for 84.204.51.226 at 2012-04-25 06:54:40 +0000
+  Processing by AccountsController#index as HTML
+  [1m[36mAccount Load (0.6ms)[0m  [1mSELECT "accounts".* FROM "accounts" [0m
+Rendered accounts/index.html.haml within layouts/application (79.6ms)
+Completed 200 OK in 90ms (Views: 87.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 06:54:41 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 06:54:41 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 06:54:41 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 06:54:41 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/transactions" for 84.204.51.226 at 2012-04-25 07:02:34 +0000
+  Processing by TransactionsController#index as HTML
+  [1m[35mTransaction Load (0.2ms)[0m  SELECT "transactions".* FROM "transactions" 
+Rendered transactions/index.html.haml within layouts/application (60.6ms)
+Completed 200 OK in 85ms (Views: 83.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 07:02:34 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 07:02:34 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 07:02:34 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 07:02:34 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/transactions/new" for 84.204.51.226 at 2012-04-25 07:02:36 +0000
+  Processing by TransactionsController#new as HTML
+Rendered transactions/new.html.haml within layouts/application (5.8ms)
+Completed 200 OK in 70ms (Views: 69.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 07:02:36 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 07:02:36 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 07:02:36 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 07:02:36 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started POST "/transactions" for 84.204.51.226 at 2012-04-25 07:02:47 +0000
+  Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"вњ“", "authenticity_token"=>"locdDt0AAYV1QlbCiT92c1eEbuMm8GaWQHjVO58iJOw=", "transaction"=>{"from"=>"222444", "to"=>"111666", "change_date(1i)"=>"2012", "change_date(2i)"=>"4", "change_date(3i)"=>"25", "sum"=>"25"}, "commit"=>"Save Changes"}
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."account" = '222444' LIMIT 1[0m
+  [1m[35mAccount Load (0.2ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."account" = '111666' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "transactions" ("change_date", "created_at", "from", "sum", "to", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["change_date", Wed, 25 Apr 2012 07:02:48 UTC +00:00], ["created_at", Wed, 25 Apr 2012 07:02:48 UTC +00:00], ["from", "222444"], ["sum", 25], ["to", "111666"], ["updated_at", Wed, 25 Apr 2012 07:02:48 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  UPDATE "accounts" SET "sum" = 6164, "updated_at" = '2012-04-25 07:02:48.079872' WHERE "accounts"."id" = 2
+  [1m[36m (0.1ms)[0m  [1mUPDATE "accounts" SET "sum" = 13336, "updated_at" = '2012-04-25 07:02:48.103428' WHERE "accounts"."id" = 1[0m
+Rendered notifier/transaction_from_notification.text.erb (0.5ms)
+
+Sent mail to t-pskov_m@rambler.ru (1927ms)
+Date: Wed, 25 Apr 2012 07:02:48 +0000
+From: vasyaabr@gmail.com
+To: t-pskov_m@rambler.ru
+Message-ID: <4f97a19822e78_4a3625f30e93870@ip-10-234-217-96.mail>
+Subject: =?UTF-8?Q?=D0=A2-=D0=91=D0=B0=D0=BD=D0=BA_:?=
+ =?UTF-8?Q?_=D0=B2=D1=8B=D0=BF=D0=BE=D0=BB=D0=BD=D0=B5=D0=BD?=
+ =?UTF-8?Q?_=D0=B1=D0=B0=D0=BD=D0=BA=D0=BE=D0=B2=D1=81=D0=BA=D0=B8=D0=B9?=
+ =?UTF-8?Q?_=D0=BF=D0=B5=D1=80=D0=B5=D0=B2=D0=BE=D0=B4?=
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+CtCS0Ysg0L7RgtC/0YDQsNCy0LjQu9C4INC00LXQvdC10LbQvdGL0Lkg0L/Q
+tdGA0LXQstC+0LQg0YfQtdGA0LXQtyDRgdC40YHRgtC10LzRiyDQoi3QkdCw
+0L3QutCwLgo9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
+PT09PT09PT09PT09PT0KCtCh0YfQtdGCINC/0L7Qu9GD0YfQsNGC0LXQu9GP
+IDogIDExMTY2NiAK0JTQsNGC0LAgLyDQstGA0LXQvNGPIDogIDIwMTItMDQt
+MjUgMDc6MDI6NDggVVRDIArQodGD0LzQvNCwIDogIDI1IAoK0JXRgdC70Lgg
+0LTQsNC90L3Ri9C5INC/0LXRgNC10LLQvtC0INC+0YLQv9GA0LDQstC70LXQ
+vSDQvdC1INCy0LDQvNC4IC0g0L3QtdC80LXQtNC70LXQvdC90L4g0YHQstGP
+0LbQuNGC0LXRgdGMINGBINC80LDRgdGC0LXRgNGB0LrQvtC5INCz0YDRg9C/
+0L/QvtC5IQo=
+Rendered notifier/transaction_to_notification.text.erb (0.5ms)
+
+Sent mail to vasyaabr@gmail.com (1631ms)
+Date: Wed, 25 Apr 2012 07:02:50 +0000
+From: vasyaabr@gmail.com
+To: vasyaabr@gmail.com
+Message-ID: <4f97a19a133eb_4a3625f30e93913@ip-10-234-217-96.mail>
+Subject: =?UTF-8?Q?=D0=A2-=D0=91=D0=B0=D0=BD=D0=BA_:?=
+ =?UTF-8?Q?_=D0=BF=D0=BE=D0=BB=D1=83=D1=87=D0=B5=D0=BD?=
+ =?UTF-8?Q?_=D0=B1=D0=B0=D0=BD=D0=BA=D0=BE=D0=B2=D1=81=D0=BA=D0=B8=D0=B9?=
+ =?UTF-8?Q?_=D0=BF=D0=B5=D1=80=D0=B5=D0=B2=D0=BE=D0=B4?=
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+CtCS0Ysg0L/QvtC70YPRh9C40LvQuCDQtNC10L3QtdC20L3Ri9C5INC/0LXR
+gNC10LLQvtC0INGH0LXRgNC10Lcg0YHQuNGB0YLQtdC80Ysg0KIt0JHQsNC9
+0LrQsC4KPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
+PT09PT09PT09PT09CgrQodGH0LXRgiDQvtGC0L/RgNCw0LLQuNGC0LXQu9GP
+IDogIDIyMjQ0NCAK0JTQsNGC0LAgLyDQstGA0LXQvNGPIDogIDIwMTItMDQt
+MjUgMDc6MDI6NDggVVRDIArQodGD0LzQvNCwIDogIDI1IAoK0JXRgdC70Lgg
+0LTQsNC90L3Ri9C5INC/0LXRgNC10LLQvtC0INC+0YLQv9GA0LDQstC70LXQ
+vSDQstCw0Lwg0L/QviDQvtGI0LjQsdC60LUgLSDRgdCy0Y/QttC40YLQtdGB
+0Ywg0YEg0LzQsNGB0YLQtdGA0YHQutC+0Lkg0LPRgNGD0L/Qv9C+0LkhCg==
+Redirected to http://ec2-176-34-202-40.eu-west-1.compute.amazonaws.com:3000/transactions
+Completed 302 Found in 3690ms
+
+
+Started GET "/transactions" for 84.204.51.226 at 2012-04-25 07:02:51 +0000
+  Processing by TransactionsController#index as HTML
+  [1m[35mTransaction Load (0.2ms)[0m  SELECT "transactions".* FROM "transactions" 
+Rendered transactions/index.html.haml within layouts/application (14.6ms)
+Completed 200 OK in 35ms (Views: 33.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 07:02:52 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 07:02:52 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 07:02:52 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 07:02:52 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/accounts" for 84.204.51.226 at 2012-04-25 07:04:35 +0000
+  Processing by AccountsController#index as HTML
+  [1m[36mAccount Load (0.6ms)[0m  [1mSELECT "accounts".* FROM "accounts" [0m
+Rendered accounts/index.html.haml within layouts/application (29.6ms)
+Completed 200 OK in 39ms (Views: 36.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 07:04:35 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 07:04:35 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 07:04:35 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 07:04:35 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/accounts/2" for 84.204.51.226 at 2012-04-25 07:04:45 +0000
+  Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mAccount Load (0.1ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", "2"]]
+Rendered accounts/show.html.haml within layouts/application (13.6ms)
+Completed 200 OK in 23ms (Views: 21.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 07:04:45 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 07:04:45 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 07:04:45 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 07:04:45 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/accounts" for 84.204.51.226 at 2012-04-25 07:08:54 +0000
+  Processing by AccountsController#index as HTML
+  [1m[36mAccount Load (0.6ms)[0m  [1mSELECT "accounts".* FROM "accounts" [0m
+Rendered accounts/index.html.haml within layouts/application (74.6ms)
+Completed 200 OK in 84ms (Views: 81.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 07:08:54 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 07:08:54 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 07:08:54 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 07:08:54 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/accounts/2" for 84.204.51.226 at 2012-04-25 07:08:57 +0000
+  Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mAccount Load (0.1ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36mTransaction Load (0.2ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."from" = '222444'[0m
+Rendered accounts/show.html.haml within layouts/application (69.7ms)
+Completed 200 OK in 87ms (Views: 75.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 07:08:57 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 07:08:57 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 07:08:57 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 07:08:57 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/accounts/2" for 84.204.51.226 at 2012-04-25 07:10:00 +0000
+  Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mAccount Load (0.1ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36mTransaction Load (0.2ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."from" = '222444'[0m
+Rendered accounts/show.html.haml within layouts/application (64.8ms)
+Completed 200 OK in 81ms (Views: 70.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 07:10:00 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 07:10:00 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 07:10:00 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 07:10:00 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/accounts" for 84.204.51.226 at 2012-04-25 07:10:04 +0000
+  Processing by AccountsController#index as HTML
+  [1m[35mAccount Load (0.6ms)[0m  SELECT "accounts".* FROM "accounts" 
+Rendered accounts/index.html.haml within layouts/application (31.1ms)
+Completed 200 OK in 85ms (Views: 82.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 07:10:05 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 07:10:05 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 07:10:05 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 07:10:05 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/accounts/1" for 84.204.51.226 at 2012-04-25 07:10:09 +0000
+  Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mTransaction Load (0.2ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."from" = '111666'
+Rendered accounts/show.html.haml within layouts/application (4.7ms)
+Completed 200 OK in 21ms (Views: 10.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 07:10:09 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 07:10:09 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 07:10:09 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 07:10:09 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/accounts/1" for 84.204.51.226 at 2012-04-25 07:11:57 +0000
+  Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAccount Load (0.2ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mTransaction Load (0.2ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."from" = '111666'
+Rendered accounts/show.html.haml within layouts/application (13.3ms)
+Completed 200 OK in 31ms (Views: 19.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 07:11:58 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 07:11:58 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 07:11:58 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 07:11:58 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/accounts" for 84.204.51.226 at 2012-04-25 07:12:07 +0000
+  Processing by AccountsController#index as HTML
+  [1m[36mAccount Load (0.6ms)[0m  [1mSELECT "accounts".* FROM "accounts" [0m
+Rendered accounts/index.html.haml within layouts/application (81.4ms)
+Completed 200 OK in 91ms (Views: 88.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 07:12:07 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 07:12:07 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 07:12:07 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 07:12:10 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/accounts/1" for 84.204.51.226 at 2012-04-25 07:16:32 +0000
+  Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAccount Load (0.1ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mTransaction Load (0.2ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."from" = '111666'[0m
+Rendered accounts/show.html.haml within layouts/application (4.6ms)
+Completed 200 OK in 21ms (Views: 10.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 07:16:33 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 07:16:33 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 07:16:33 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 07:16:33 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/accounts/1" for 84.204.51.226 at 2012-04-25 07:17:20 +0000
+  Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAccount Load (0.2ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mTransaction Load (0.2ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."from" = '111666'[0m
+  [1m[35mTransaction Load (0.2ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."to" = '111666'
+Rendered accounts/show.html.haml within layouts/application (29.7ms)
+Completed 200 OK in 48ms (Views: 37.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 07:17:21 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 07:17:21 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 07:17:21 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 07:17:21 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 84.204.51.226 at 2012-04-25 07:17:26 +0000
+  Processing by TransactionsController#send as HTML
+Rendered transactions/send.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 22ms (Views: 21.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 07:17:26 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 07:17:26 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 07:17:26 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 07:17:26 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/accounts" for 84.204.51.226 at 2012-04-25 07:17:29 +0000
+  Processing by AccountsController#index as HTML
+  [1m[36mAccount Load (0.6ms)[0m  [1mSELECT "accounts".* FROM "accounts" [0m
+Rendered accounts/index.html.haml within layouts/application (71.8ms)
+Completed 200 OK in 82ms (Views: 78.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 07:17:29 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 07:17:29 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 07:17:29 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 07:17:29 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/" for 84.204.51.226 at 2012-04-25 07:24:37 +0000
+  Processing by TransactionsController#send as HTML
+Rendered transactions/send.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 70ms (Views: 68.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 07:24:37 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 07:24:37 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 07:24:37 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 07:24:37 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/bans" for 84.204.51.226 at 2012-04-25 07:24:39 +0000
+  Processing by BansController#index as HTML
+  [1m[35mBan Load (0.3ms)[0m  SELECT "bans".* FROM "bans" 
+Rendered bans/index.html.haml within layouts/application (7.1ms)
+Completed 200 OK in 28ms (Views: 26.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 07:24:39 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 07:24:39 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 07:24:39 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 07:24:39 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/accounts" for 84.204.51.226 at 2012-04-25 07:24:52 +0000
+  Processing by AccountsController#index as HTML
+  [1m[36mAccount Load (0.7ms)[0m  [1mSELECT "accounts".* FROM "accounts" [0m
+Rendered accounts/index.html.haml within layouts/application (30.3ms)
+Completed 200 OK in 41ms (Views: 37.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 07:24:52 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 07:24:52 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 07:24:52 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 07:24:52 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/accounts/2" for 84.204.51.226 at 2012-04-25 07:24:54 +0000
+  Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mAccount Load (0.2ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36mTransaction Load (0.2ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."from" = '222444'[0m
+  [1m[35mTransaction Load (0.1ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."to" = '222444'
+Rendered accounts/show.html.haml within layouts/application (19.6ms)
+Completed 200 OK in 38ms (Views: 26.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 07:24:55 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 07:24:55 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 07:24:55 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 07:24:55 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/transactions/1/edit" for 84.204.51.226 at 2012-04-25 07:25:00 +0000
+  Processing by TransactionsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTransaction Load (0.3ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Rendered transactions/edit.html.haml within layouts/application (12.9ms)
+Completed 200 OK in 54ms (Views: 50.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 07:25:00 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 07:25:00 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 07:25:00 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 07:25:00 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/accounts/1" for 84.204.51.226 at 2012-04-25 07:25:04 +0000
+  Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAccount Load (0.1ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mTransaction Load (0.3ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."from" = '111666'[0m
+  [1m[35mTransaction Load (0.2ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."to" = '111666'
+Rendered accounts/show.html.haml within layouts/application (65.4ms)
+Completed 200 OK in 83ms (Views: 71.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 84.204.51.226 at 2012-04-25 07:25:04 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 84.204.51.226 at 2012-04-25 07:25:04 +0000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 84.204.51.226 at 2012-04-25 07:25:04 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 84.204.51.226 at 2012-04-25 07:25:04 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/transactions" for 84.204.51.226 at 2012-04-2
