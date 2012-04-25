@@ -33,7 +33,7 @@ Rottenpotatoes::Application.configure do
   :address              => "smtp.gmail.com",
   :port                 => 587,
   :domain               => 'gmail.com',
-  :user_name            => 'vasyaabr@gmail.com',
+  :user_name            => 'tpskov.bank@gmail.com',
   :password             => 'jxtympkjq,fpbkm',
   :authentication       => 'plain',
   :enable_starttls_auto => true  }
