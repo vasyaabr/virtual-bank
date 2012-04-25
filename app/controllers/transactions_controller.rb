@@ -17,7 +17,7 @@ class TransactionsController < ApplicationController
 
   def create
     if params[:transaction][:from]
-      @from = Account.find_by_account params[:transaction][:from]
+      @from = Account.find_by_account params[:transaction][:from].gsub(/-/,'')
     else
       @from = Account.find_by_account session[:acc].account
     end
@@ -40,22 +40,22 @@ class TransactionsController < ApplicationController
       return
     end
 
-    @to = Account.find_by_account params[:transaction][:to]
+    @to = Account.find_by_account params[:transaction][:to].gsub(/-/,'')
     if @to == nil
       flash[:notice] = "Неверный счет получателя."
       redirect_to session[:admin] ? new_transaction_path : root_url
       return
     end
 
-    if @from.account == params[:transaction][:to]
+    if @from.account == @to.account
       flash[:notice] = "Запрещенная операция (нельзя переводить самому себе)."
       redirect_to session[:admin] ? new_transaction_path : root_url
       return
     end
 
     @transaction = Transaction.new(:from => @from.account, 
-      :to => params[:transaction][:to],
-      :change_date => params[:transaction][:change_date] == nil ? Time.now : params[:transaction][:change_date], 
+      :to => @to.account,
+      :change_date => params[:transaction][:change_date] == nil ? (Time.now.utc+60*60*4) : params[:transaction][:change_date], 
       :sum => params[:transaction][:sum])
     @transaction.save
     #audit_log.info 'Transaction added: '+params[]

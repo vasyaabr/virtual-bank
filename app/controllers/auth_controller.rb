@@ -6,7 +6,7 @@ class AuthController < ApplicationController
   end
 
   def setauth
-    @user = Account.find_by_account_and_pass params[:auth][:account], params[:auth][:pass]
+    @user = Account.find_by_account_and_pass params[:auth][:account].gsub(/-/,''), params[:auth][:pass]
     if @user == nil
       # update false logins table
       #@ban = Ban.find_by_ip request.remote_ip
