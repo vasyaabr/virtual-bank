@@ -38,44 +38,48 @@
   = button_to 'Удалить', account_path(@account), :method => :delete, :confirm => 'Вы уверены?'
   = link_to 'Назад к списку счетов', accounts_path
 
-  %h2 Отправленные переводы
+%h2 Отправленные переводы
 
-  %table#transactions
-    %thead
-      %tr
-        %th Со счета
-        %th На счет
-        %th Дата транзакции
-        %th Сумма
+%table#transactions
+  %thead
+    %tr
+      %th Со счета
+      %th На счет
+      %th Дата транзакции
+      %th Сумма
+      - if session[:admin] 
         %th Редактировать
         %th Удалить
-    %tbody
-      - @senttransactions.each do |transaction|
-        %tr
-          %td= transaction.from 
-          %td= transaction.to
-          %td= transaction.change_date
-          %td= transaction.sum
+  %tbody
+    - @senttransactions.each do |transaction|
+      %tr
+        %td= transaction.from 
+        %td= transaction.to
+        %td= transaction.change_date
+        %td= transaction.sum
+        - if session[:admin] 
           %td= link_to 'Редактировать', edit_transaction_path(transaction)
           %td= button_to 'Удалить', transaction_path(transaction), :method => :delete, :confirm => 'Вы уверены?'
 
-  %h2 Полученные переводы
+%h2 Полученные переводы
 
-  %table#transactions
-    %thead
-      %tr
-        %th Со счета
-        %th На счет
-        %th Дата транзакции
-        %th Сумма
+%table#transactions
+  %thead
+    %tr
+      %th Со счета
+      %th На счет
+      %th Дата транзакции
+      %th Сумма
+      - if session[:admin] 
         %th Редактировать
         %th Удалить
-    %tbody
-      - @recvtransactions.each do |transaction|
-        %tr
-          %td= transaction.from 
-          %td= transaction.to
-          %td= transaction.change_date
-          %td= transaction.sum
+  %tbody
+    - @recvtransactions.each do |transaction|
+      %tr
+        %td= transaction.from 
+        %td= transaction.to
+        %td= transaction.change_date
+        %td= transaction.sum
+        - if session[:admin] 
           %td= link_to 'Редактировать', edit_transaction_path(transaction)
           %td= button_to 'Удалить', transaction_path(transaction), :method => :delete, :confirm => 'Вы уверены?'

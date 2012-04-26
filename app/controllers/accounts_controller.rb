@@ -12,7 +12,7 @@ class AccountsController < ApplicationController
   end
 
   def index
-    @accounts = Account.all
+    @accounts = Account.order("id")
   end
 
   def new
