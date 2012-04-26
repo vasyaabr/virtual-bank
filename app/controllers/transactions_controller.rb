@@ -82,7 +82,7 @@ class TransactionsController < ApplicationController
     end
 
     flash[:notice] = "Операция успешно проведена."
-    redirect_to transactions_path
+    redirect_to root_url
   end
 
   def edit
