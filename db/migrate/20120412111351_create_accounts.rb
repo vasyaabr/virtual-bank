@@ -4,7 +4,7 @@ class CreateAccounts < ActiveRecord::Migration
     {:name => 'Лукомир', :account => '111666', :pass => '3366', :sum => 12000, :credit => 0, :creditsum => 0, :mail => 'vasyaabr@gmail.com', :active => 1, :admin => 1},
     {:name => 'Серж де Гил', :account => '222444', :pass => '5193', :sum => 7500, :credit => 0, :creditsum => 0, :mail => 't-pskov_m@rambler.ru', :active => 1, :admin => 1},
     {:name => 'барон Святояр', :account => '111000', :pass => '1141', :sum => 20000, :credit => 0, :creditsum => 0, :mail => 'rt-567@yandex.ru', :active => 1, :admin => 0},
-    {:name => 'баронесса', :account => '111001', :pass => '8585', :sum => 10000, :credit => 0, :creditsum => 0, :mail => '', :active => 1, :admin => 0},
+    {:name => 'баронесса Злата', :account => '111001', :pass => '8585', :sum => 10000, :credit => 0, :creditsum => 0, :mail => 'smarisha@bk.ru', :active => 1, :admin => 0},
     {:name => 'жрица Владана', :account => '111002', :pass => '6565', :sum => 20000, :credit => 0, :creditsum => 0, :mail => 'tanven@yandex.ru', :active => 1, :admin => 0},
     {:name => 'фата Ульяна', :account => '111055', :pass => '6996', :sum => 5000, :credit => 0, :creditsum => 0, :mail => 'gadziga@yandex.ru', :active => 1, :admin => 0},
     {:name => 'фата Илена', :account => '111010', :pass => '2336', :sum => 3000, :credit => 0, :creditsum => 0, :mail => 'elenkali@yandex.ru', :active => 1, :admin => 1},
@@ -64,6 +64,12 @@ class CreateAccounts < ActiveRecord::Migration
     {:name => 'Служба утилизации', :account => '911911', :pass => '0666', :sum => 0, :credit => 0, :creditsum => 0, :mail => '', :active => 1, :admin => 0},
     {:name => 'Малый тотализатор', :account => '777777', :pass => '1981', :sum => 10000, :credit => 0, :creditsum => 0, :mail => '', :active => 1, :admin => 0},
     {:name => 'ИА Т-Псков', :account => '555555', :pass => '2055', :sum => 1000, :credit => 0, :creditsum => 0, :mail => '', :active => 1, :admin => 0},
+    {:name => 'фея Ярослава', :account => '111345', :pass => '6979', :sum => 2500, :credit => 0, :creditsum => 0, :mail => 'kreiri@mail.ru', :active => 1, :admin => 0},
+    {:name => 'Владимир', :account => '111163', :pass => '4545', :sum => 2000, :credit => 0, :creditsum => 0, :mail => 'Lemw@yandex.ru', :active => 1, :admin => 0},
+    {:name => 'Мирополк', :account => '111164', :pass => '7787', :sum => 1500, :credit => 0, :creditsum => 0, :mail => 'maxgreen16@rambler.ru', :active => 1, :admin => 0},
+    {:name => 'Мирослав', :account => '111165', :pass => '5432', :sum => 1500, :credit => 0, :creditsum => 0, :mail => 'iliapurple17@mail.ru', :active => 1, :admin => 0},
+    {:name => 'Бласга', :account => '999999', :pass => '9922', :sum => 15000, :credit => 0, :creditsum => 0, :mail => '', :active => 1, :admin => 0},
+    {:name => 'Алексей Фисенко', :account => '555055', :pass => '7271', :sum => 3000, :credit => 0, :creditsum => 0, :mail => 'f.al@rambler.ru', :active => 1, :admin => 0},
     #{:name => '', :account => '', :pass => '', :sum => 000, :credit => 0, :creditsum => 0, :mail => '', :active => 1, :admin => 0},
   ]
   def up

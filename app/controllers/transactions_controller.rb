@@ -5,9 +5,9 @@ class TransactionsController < ApplicationController
 
   def index
     if session[:admin]
-      @transactions = Transaction.all
+      @transactions = Transaction.order("change_date ASC")
     else
-      @transactions = Transaction.where(:from => session[:acc].account)
+      @transactions = Transaction.where(:from => session[:acc].account).order("change_date ASC")
     end
   end
 
