@@ -53,6 +53,12 @@ class TransactionsController < ApplicationController
       return
     end
 
+    if params[:transaction][:sum].to_i <= 0
+      flash[:notice] = "Запрещенная операция (сумма должна быть больше нуля)."
+      redirect_to session[:admin] ? new_transaction_path : root_url
+      return
+    end
+
     @transaction = Transaction.new(:from => @from.account, 
       :to => @to.account,
       :change_date => params[:transaction][:change_date] == nil ? (Time.now.utc+60*60*4) : params[:transaction][:change_date], 
