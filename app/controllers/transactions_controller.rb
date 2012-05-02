@@ -62,7 +62,8 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.new(:from => @from.account, 
       :to => @to.account,
       :change_date => params[:transaction][:change_date] == nil ? (Time.now.utc+60*60*4) : params[:transaction][:change_date], 
-      :sum => params[:transaction][:sum])
+      :sum => params[:transaction][:sum],
+      :comment => params[:transaction][:comment])
     @transaction.save
     #audit_log.info 'Transaction added: '+params[]
 

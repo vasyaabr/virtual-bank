@@ -1,26 +1,28 @@
 -#  This file is app/views/transactions/index.html.haml
-%h1 Банк : Все транзакции
+%h1 Банк : Все переводы
 
 %table#transactions
   %thead
     %tr
       %th Со счета
       %th На счет
-      %th Дата транзакции
+      %th Дата перевода
       %th Сумма
+      %th Назначение перевода
       - if session[:admin] 
         %th Редактировать
         %th Удалить
   %tbody
     - @transactions.each do |transaction|
       %tr
-        %td= transaction.from 
-        %td= transaction.to
+        %td= transaction.from + ' (' + Account.find_by_account(transaction.from).name + ')'
+        %td= transaction.to + ' (' + Account.find_by_account(transaction.to).name + ')'
         %td= transaction.change_date
         %td= transaction.sum
+        %td= transaction.comment
         - if session[:admin] 
           %td= link_to 'Редактировать', edit_transaction_path(transaction)
           %td= button_to 'Удалить', transaction_path(transaction), :method => :delete, :confirm => 'Вы уверены?'
 
 - if session[:admin] 
-  = link_to 'Добавить новую транзакцию', new_transaction_path
+  = link_to 'Добавить новый перевод', new_transaction_path

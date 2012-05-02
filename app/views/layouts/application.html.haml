@@ -14,7 +14,7 @@
         %h2= link_to 'Остаток и движения на счете', account_path(session[:acc])
         - if session[:admin]
           %h2= link_to 'Все счета', accounts_path
-          %h2= link_to 'Транзакции', transactions_path
+          %h2= link_to 'Переводы', transactions_path
           %h2= link_to 'Заблокированные IP', bans_path
         %h2= link_to 'Выход', logout_url
 

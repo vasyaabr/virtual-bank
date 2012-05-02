@@ -45,8 +45,9 @@
     %tr
       %th Со счета
       %th На счет
-      %th Дата транзакции
+      %th Дата перевода
       %th Сумма
+      %th Назначение перевода
       - if session[:admin] 
         %th Редактировать
         %th Удалить
@@ -57,6 +58,7 @@
         %td= transaction.to
         %td= transaction.change_date
         %td= transaction.sum
+        %td= transaction.comment
         - if session[:admin] 
           %td= link_to 'Редактировать', edit_transaction_path(transaction)
           %td= button_to 'Удалить', transaction_path(transaction), :method => :delete, :confirm => 'Вы уверены?'
@@ -68,8 +70,9 @@
     %tr
       %th Со счета
       %th На счет
-      %th Дата транзакции
+      %th Дата перевода
       %th Сумма
+      %th Назначение перевода
       - if session[:admin] 
         %th Редактировать
         %th Удалить
@@ -80,6 +83,7 @@
         %td= transaction.to
         %td= transaction.change_date
         %td= transaction.sum
+        %td= transaction.comment
         - if session[:admin] 
           %td= link_to 'Редактировать', edit_transaction_path(transaction)
           %td= button_to 'Удалить', transaction_path(transaction), :method => :delete, :confirm => 'Вы уверены?'

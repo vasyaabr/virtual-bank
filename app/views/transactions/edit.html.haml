@@ -1,19 +1,22 @@
 -# edit.html.haml using partial
 
-%h1 Edit Existing Transaction
+%h1 Редактировать существующий перевод
 
 = form_tag transaction_path(@transaction), :method => :put do
 
-  = label :transaction, :from, 'From'
+  = label :transaction, :from, 'От кого'
   = text_field :transaction, 'from'
 
-  = label :transaction, :to, 'To'
+  = label :transaction, :to, 'Кому'
   = text_field :transaction, 'to'
 
-  = label :transaction, :change_date, 'Change date'
+  = label :transaction, :change_date, 'Дата перевода'
   = date_select :transaction, :change_date
 
-  = label :transaction, :sum, 'Sum'
+  = label :transaction, :sum, 'Сумма'
   = number_field :transaction, :sum
 
-  = submit_tag 'Update Transaction Info'
+  = label :transaction, :comment, 'Назначение перевода'
+  = number_field :transaction, :comment
+
+  = submit_tag 'Обновить данные перевода'
