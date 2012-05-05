@@ -1,32 +1,32 @@
-%h1 Create New Account
+%h1 Создать новый счет
 
 = form_tag accounts_path do
 
-  = label :account, :name, 'Name'
+  = label :account, :name, 'Владелец'
   = text_field :account, 'name'
 
-  = label :account, :account, 'Account'
+  = label :account, :account, 'Номер счета'
   = text_field :account, 'account'
 
-  = label :account, :pass, 'Password'
+  = label :account, :pass, 'Пароль'
   = text_field :account, 'pass'
 
-  = label :account, :sum, 'Sum'
+  = label :account, :sum, 'Сумма'
   = number_field :account, :sum
 
   = label :account, :credit, 'Кредит разрешен'
   = number_field :account, :credit
 
-  = label :account, :creditsum, 'Credit sum'
+  = label :account, :creditsum, 'Сумма кредита'
   = number_field :account, :creditsum
 
   = label :account, :mail, 'E-mail'
   = text_field :account, 'mail'
 
-  = label :account, :active, 'Account active'
+  = label :account, :active, 'Счет активен'
   = number_field :account, :active
 
   = label :account, :admin, 'Это администратор'
   = number_field :account, :admin
 
-  = submit_tag 'Save Changes'
+  = submit_tag 'Записать'

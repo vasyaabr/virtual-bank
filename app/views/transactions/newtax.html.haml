@@ -1,0 +1,32 @@
+-#  This file is app/views/transactions/index.html.haml
+%h1 Банк : Налоги и выплаты
+
+= form_tag taxes_transactions_path do
+
+  = label :tax, :account, 'Счет налоговой службы / оплачивающей организации'
+  = number_field :tax, :account
+
+  = label :tax, :sum, 'Сумма'
+  = number_field :tax, :sum
+
+  = label :tax, :comment, 'Назначение перевода'
+  = text_field :tax, :comment
+
+  %table#accounts
+    %thead
+      %tr
+        %th Cчет
+        %th Владелец
+        %th Начислить
+        %th Сумма
+        %th Назначение перевода
+    %tbody
+      - @accounts.each do |account|
+        %tr
+          %td= account.account
+          %td= account.name
+          %td= check_box account.account, :use
+          %td= number_field account.account, :sum
+          %td= text_field account.account, :comment
+
+  = submit_tag 'Провести действие'

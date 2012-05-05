@@ -16,7 +16,11 @@ Rottenpotatoes::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  resources :accounts, :transactions
+  resources :accounts
+  resources :transactions do
+    get 'newtax', :on => :collection
+    post 'taxes', :on => :collection
+  end
   resources :bans, :only => :index
 
   # Sample resource route with options:

@@ -15,6 +15,7 @@
         - if session[:admin]
           %h2= link_to 'Все счета', accounts_path
           %h2= link_to 'Переводы', transactions_path
+          %h2= link_to 'Налоги и выплаты', newtax_transactions_path
           %h2= link_to 'Заблокированные IP', bans_path
         %h2= link_to 'Выход', logout_url
 

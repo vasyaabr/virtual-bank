@@ -67,4 +67,5 @@ Rottenpotatoes::Application.configure do
   :password             => 'jxtympkjq,fpbkm',
   :authentication       => 'plain',
   :enable_starttls_auto => true  }
+
 end

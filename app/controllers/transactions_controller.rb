@@ -1,14 +1,10 @@
 #encoding: utf-8
 class TransactionsController < ApplicationController
   before_filter :authenticate
-  before_filter :isadmin?, :only => [:edit, :update, :destroy]
+  before_filter :isadmin?, :only => [:index, :edit, :update, :destroy, :newtax, :taxes]
 
   def index
-    if session[:admin]
-      @transactions = Transaction.order("change_date ASC")
-    #else
-    #  @transactions = Transaction.where(:from => session[:acc].account).order("change_date ASC")
-    end
+    @transactions = Transaction.order("change_date DESC")
   end
 
   def new
@@ -75,10 +71,10 @@ class TransactionsController < ApplicationController
     @to.save
     #audit_log.info 'Sum changed for '+@to.account+', amount: +'+params[:transaction][:sum]
 
-    if @from.mail != '' and @from.mail != nil
+    if @from.mail != '' and @from.mail != nil and Rails.env.production?
       Notifier.transaction_from_notification(@from,@transaction).deliver
     end
-    if @to.mail != '' and @to.mail != nil
+    if @to.mail != '' and @to.mail != nil and Rails.env.production?
       Notifier.transaction_to_notification(@to,@transaction).deliver
     end
 
@@ -102,6 +98,52 @@ class TransactionsController < ApplicationController
     @transaction.destroy
     flash[:notice] = "Транзакция удалена."
     redirect_to transactions_path
+  end
+
+  def newtax
+    # render 'newtax' template
+    @accounts = Account.all
+  end
+
+  def taxes
+    Account.all.each { |account|
+      acc = params.fetch(account.account)
+      if acc['use'] == '1'
+        sum = acc['sum'].to_i > 0 ? acc['sum'].to_i : params[:tax][:sum].to_i
+        comment = acc['comment'].size > 0 ? acc['comment'] : params[:tax][:comment]
+
+        @to = Account.find_by_account params[:tax][:account].gsub(/-/,'')
+        if @to == nil
+          flash[:notice] = "Неверный счет получателя."
+          redirect_to root_url
+          return
+        end
+        next if account.account == @to.account
+        if sum <= 0
+          flash[:notice] = "Запрещенная операция (сумма должна быть больше нуля)."
+          redirect_to root_url
+          return
+        end
+
+        @transaction = Transaction.new(:from => account.account, 
+          :to => @to.account,
+          :change_date => (Time.now.utc+60*60*4), 
+          :sum => sum,
+          :comment => comment)
+        @transaction.save
+        account.sum -= sum
+        account.save
+        @to.sum += sum
+        @to.save
+
+        if account.mail != '' and account.mail != nil and Rails.env.production?
+          Notifier.transaction_from_notification(account,@transaction).deliver
+        end
+      end
+    }
+
+    flash[:notice] = 'Массовое перечисление произведено'
+    redirect_to root_url
   end
 
 end
