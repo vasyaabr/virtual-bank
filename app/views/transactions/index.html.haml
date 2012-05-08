@@ -15,8 +15,8 @@
   %tbody
     - @transactions.each do |transaction|
       %tr
-        %td= transaction.from + ' (' + Account.find_by_account(transaction.from).name + ')'
-        %td= transaction.to + ' (' + Account.find_by_account(transaction.to).name + ')'
+        %td= transaction.from + ' (' + (Account.find_by_account(transaction.from) == nil ? 'NULL' : Account.find_by_account(transaction.from).name) + ')' 
+        %td= transaction.to + ' (' + (Account.find_by_account(transaction.to) == nil ? 'NULL' : Account.find_by_account(transaction.to).name) + ')'
         %td= transaction.change_date
         %td= transaction.sum
         %td= transaction.comment

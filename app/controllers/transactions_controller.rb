@@ -137,7 +137,7 @@ class TransactionsController < ApplicationController
         @to.save
 
         if account.mail != '' and account.mail != nil and Rails.env.production?
-          Notifier.transaction_from_notification(account,@transaction).deliver
+          Notifier.transaction_to_notification(account,@transaction).deliver
         end
       end
     }
