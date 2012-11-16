@@ -7,22 +7,24 @@
     = csrf_meta_tags
 
   %body
-    %h1.title= link_to 'Т-Псков', root_url
-    - if session[:acc] 
-      #menu
-        %h2= link_to 'Оплата', root_url
-        %h2= link_to 'Остаток и движения на счете', account_path(session[:acc])
-        - if session[:admin]
-          %h2= link_to 'Все счета', accounts_path
-          %h2= link_to 'Переводы', transactions_path
-          %h2= link_to 'Налоги и выплаты', newtax_transactions_path
-          %h2= link_to 'Заблокированные IP', bans_path
-        %h2= link_to 'Выход', logout_url
+    #art-main
+      #art-sheet
+        #header
+        - if session[:acc] 
+          #nav
+            %ul#menu
+              %li= link_to 'Оплата', root_url
+              %li= link_to 'Cчет', account_path(session[:acc])
+              - if session[:admin]
+                %li= link_to 'Все счета', accounts_path
+                %li= link_to 'Переводы', transactions_path
+                %li= link_to 'Налоги и выплаты', newtax_transactions_path
+                %li= link_to 'Заблокированные IP', bans_path
+              %li= link_to 'Выход', logout_url
 
-    #main
-      - if flash[:notice]
-        #notice.message= flash[:notice]
-      - elsif flash[:warning]
-        #warning.message= flash[:warning]
-
-      = yield
+        #main
+          - if flash[:notice]
+            #notice.message= flash[:notice]
+          - elsif flash[:warning]
+            #warning.message= flash[:warning]
+          = yield
