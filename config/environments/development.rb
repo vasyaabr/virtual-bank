@@ -34,7 +34,7 @@ Rottenpotatoes::Application.configure do
   :port                 => 587,
   :domain               => 'gmail.com',
   :user_name            => 'tpskov.bank@gmail.com',
-  :password             => 'jxtympkjq,fpbkm',
+  :password             => '-',
   :authentication       => 'plain',
   :enable_starttls_auto => true  }
   config.action_mailer.raise_delivery_errors = true
